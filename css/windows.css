@@ -1,0 +1,1322 @@
+/* ==========================================================================
+   Ubuntu Desktop Portfolio - Window System Stylesheet (windows.css)
+   Authentic Ubuntu Yaru Window Styling (Dark Mode by Default & Yaru Light Theme)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Window Base Container - Dark Mode (Default)
+   -------------------------------------------------------------------------- */
+.xp-window {
+  position: absolute;
+  min-width: 340px;
+  max-width: calc(100vw - 70px);
+  background-color: #383734;
+  border-radius: 10px 10px 8px 8px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: var(--font-ubuntu);
+  z-index: 100;
+  color: #f3f4f6;
+  transition: box-shadow 0.15s ease, background-color 0.25s ease;
+}
+
+.xp-window.active {
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(233, 84, 32, 0.6);
+}
+
+.xp-window.minimized {
+  display: none !important;
+}
+
+.xp-window.maximized {
+  top: var(--top-panel-height) !important;
+  left: var(--dock-width) !important;
+  width: calc(100vw - var(--dock-width)) !important;
+  height: calc(100vh - var(--top-panel-height)) !important;
+  max-width: calc(100vw - var(--dock-width)) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+/* --------------------------------------------------------------------------
+   Headerbar (Titlebar) - Dark Mode
+   -------------------------------------------------------------------------- */
+.xp-titlebar {
+  height: 40px;
+  background: linear-gradient(180deg, #44423e 0%, #353430 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px 10px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  cursor: move;
+  user-select: none;
+  color: #ffffff;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.xp-window.maximized .xp-titlebar {
+  border-radius: 0;
+}
+
+.xp-window:not(.active) .xp-titlebar {
+  background: linear-gradient(180deg, #383733 0%, #2e2d2a 100%);
+  color: #9ca3af;
+}
+
+.xp-titlebar-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.xp-titlebar-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   Ubuntu Circular Window Controls
+   -------------------------------------------------------------------------- */
+.xp-titlebar-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.xp-btn-control {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ubuntu);
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  transition: all 0.15s ease;
+}
+
+/* Minimize & Maximize Buttons */
+.xp-btn-min,
+.xp-btn-max {
+  background-color: #4d4b46;
+  color: #e5e7eb;
+}
+
+.xp-btn-min:hover,
+.xp-btn-max:hover {
+  background-color: #64625b;
+  color: #ffffff;
+}
+
+.xp-btn-min:active,
+.xp-btn-max:active {
+  background-color: #383733;
+}
+
+/* Close Button (Ubuntu Orange / Red Circle) */
+.xp-btn-close {
+  background-color: var(--ub-orange);
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.xp-btn-close:hover {
+  background-color: #f26c38;
+  transform: scale(1.08);
+}
+
+.xp-btn-close:active {
+  background-color: #c33a08;
+}
+
+/* --------------------------------------------------------------------------
+   Window Content Body & Layout - Dark Mode
+   -------------------------------------------------------------------------- */
+.xp-window-body {
+  flex: 1;
+  background-color: #2e2d2a;
+  padding: 20px 24px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  color: #f3f4f6;
+  font-family: var(--font-ubuntu);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Ubuntu Sleek Scrollbar */
+.xp-window-body::-webkit-scrollbar {
+  width: 8px;
+}
+
+.xp-window-body::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.xp-window-body::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.xp-window-body::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(233, 84, 32, 0.7);
+}
+
+/* --------------------------------------------------------------------------
+   About Me Window Specific Layout (Dark Mode)
+   -------------------------------------------------------------------------- */
+.about-window-content {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Profile Header Card */
+.about-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: #3b3a36;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #4d4b46;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.about-photo-container {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  border: 3px solid var(--ub-orange);
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(233, 84, 32, 0.35);
+  background-color: #111111;
+}
+
+.about-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-profile-meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+.about-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fb923c;
+  margin: 0 0 8px 0;
+}
+
+.about-location {
+  font-size: 12.5px;
+  color: #d1d5db;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* About Text Card */
+.about-text-card {
+  background-color: #3b3a36;
+  border: 1px solid #4d4b46;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.about-section-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.about-section-heading::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  background-color: var(--ub-orange);
+  border-radius: 2px;
+}
+
+.about-description {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #e5e7eb;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Generic Cards & Elements - Dark Mode
+   -------------------------------------------------------------------------- */
+.xp-content-card {
+  background-color: #3b3a36;
+  border: 1px solid #4d4b46;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.xp-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 6px;
+}
+
+.xp-card-subtitle {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fb923c;
+  margin-bottom: 6px;
+}
+
+.xp-card-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #e5e7eb;
+}
+
+/* Badges / Tags */
+.xp-badge-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.xp-badge {
+  background-color: #3b1d15;
+  border: 1px solid #7c2d12;
+  color: #fdba74;
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+
+/* Category Skill Pills */
+.xp-skill-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+
+.xp-skill-pill:hover {
+  transform: translateY(-1.5px);
+}
+
+.xp-skill-pill.lang {
+  background: rgba(249, 115, 22, 0.14);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+  color: #fdba74;
+}
+
+.xp-skill-pill.front {
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  color: #7dd3fc;
+}
+
+.xp-skill-pill.back {
+  background: rgba(34, 197, 94, 0.14);
+  border: 1px solid rgba(34, 197, 94, 0.35);
+  color: #86efac;
+}
+
+.xp-skill-pill.db {
+  background: rgba(168, 85, 247, 0.14);
+  border: 1px solid rgba(168, 85, 247, 0.35);
+  color: #d8b4fe;
+}
+
+.xp-skill-pill.tool {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #f1f5f9;
+}
+
+/* Action Buttons */
+.xp-btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #333333;
+  border: 1px solid #4b5563;
+  border-radius: 6px;
+  padding: 7px 15px;
+  font-family: var(--font-ubuntu);
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-right: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  transition: all 0.15s ease;
+}
+
+.xp-btn-action:hover {
+  background-color: var(--ub-orange);
+  border-color: var(--ub-orange);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(233, 84, 32, 0.4);
+}
+
+.xp-btn-action:active {
+  transform: translateY(1px);
+}
+
+/* Experience List & AI Workflow Card (Dark Theme Matched) */
+.experience-list {
+  margin: 12px 0 0 20px;
+  line-height: 1.75;
+  font-size: 13.5px;
+  color: #e5e7eb;
+}
+
+.experience-list li {
+  margin-bottom: 6px;
+  color: #e5e7eb;
+}
+
+.experience-list li strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.ai-workflow-card {
+  border-left: 4px solid #f97316 !important;
+  background-color: #3b3a36 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+.ai-workflow-card .xp-card-text {
+  color: #f1f5f9 !important;
+  font-style: italic;
+  line-height: 1.65;
+}
+
+/* Contact Form in Dark Mode */
+.xp-window input[type="text"],
+.xp-window input[type="email"],
+.xp-window textarea {
+  background-color: #202020 !important;
+  border: 1px solid #444444 !important;
+  color: #ffffff !important;
+}
+
+.xp-window input[type="text"]:focus,
+.xp-window input[type="email"]:focus,
+.xp-window textarea:focus {
+  border-color: var(--ub-orange) !important;
+  box-shadow: 0 0 8px rgba(233, 84, 32, 0.4);
+}
+
+/* ==========================================================================
+   UBUNTU YARU LIGHT THEME (Activated via body.light-theme)
+   ========================================================================== */
+body.light-theme .xp-window {
+  background-color: #ffffff;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0, 0, 0, 0.1);
+  color: #1f2937;
+}
+
+body.light-theme .xp-window.active {
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(233, 84, 32, 0.5);
+}
+
+body.light-theme .xp-titlebar {
+  background: linear-gradient(180deg, #eae6de 0%, #dbd7ce 100%);
+  border-bottom: 1px solid #c9c5bc;
+  color: #111827;
+}
+
+body.light-theme .xp-window:not(.active) .xp-titlebar {
+  background: linear-gradient(180deg, #f0ece4 0%, #e2ded5 100%);
+  color: #71717a;
+}
+
+body.light-theme .xp-btn-min,
+body.light-theme .xp-btn-max {
+  background-color: #bfbbb2;
+  color: #18181b;
+}
+
+body.light-theme .xp-btn-min:hover,
+body.light-theme .xp-btn-max:hover {
+  background-color: #a8a49c;
+}
+
+body.light-theme .xp-window-body {
+  background-color: #f7f7f7;
+  color: #1f2937;
+}
+
+body.light-theme .about-profile-header,
+body.light-theme .about-text-card,
+body.light-theme .xp-content-card {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .about-name,
+body.light-theme .about-section-heading,
+body.light-theme .xp-card-title {
+  color: #111827;
+}
+
+body.light-theme .about-title,
+body.light-theme .xp-card-subtitle {
+  color: #ea580c;
+}
+
+body.light-theme .about-description,
+body.light-theme .xp-card-text {
+  color: #374151;
+}
+
+body.light-theme .about-location {
+  color: #6b7280;
+}
+
+body.light-theme .xp-badge {
+  background-color: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+}
+
+body.light-theme .xp-btn-action {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1f2937;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+body.light-theme .xp-btn-action:hover {
+  background-color: var(--ub-orange);
+  border-color: var(--ub-orange);
+  color: #ffffff;
+}
+
+body.light-theme .xp-window input[type="text"],
+body.light-theme .xp-window input[type="email"],
+body.light-theme .xp-window textarea {
+  background-color: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  color: #111827 !important;
+}
+
+/* --------------------------------------------------------------------------
+   GNOME Mines (Minesweeper) Game Window Styling
+   -------------------------------------------------------------------------- */
+.mines-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+}
+
+.mines-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 320px;
+  background: #383733;
+  border: 1px solid #4d4b46;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.mines-lcd-display {
+  background: #111111;
+  border: 1px solid #222222;
+  border-radius: 4px;
+  color: #ef4444;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 3px 8px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 6px rgba(239, 68, 68, 0.6);
+  min-width: 52px;
+  text-align: center;
+  user-select: none;
+}
+
+.mines-face-btn {
+  font-size: 24px;
+  background: #44423e;
+  border: 2px outset #5a5852;
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 2px 8px;
+  line-height: 1;
+  outline: none;
+  transition: transform 0.1s ease;
+  user-select: none;
+}
+
+.mines-face-btn:active {
+  border-style: inset;
+  transform: scale(0.95);
+}
+
+.mines-options-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mines-select {
+  background: #383733;
+  border: 1px solid #4d4b46;
+  color: #f3f4f6;
+  font-family: var(--font-ubuntu);
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+}
+
+.mines-board-container {
+  display: inline-block;
+  background: #242320;
+  padding: 8px;
+  border-radius: 8px;
+  border: 2px inset #3a3935;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.5);
+  overflow: auto;
+  max-width: 100%;
+}
+
+.mines-board-grid {
+  display: grid;
+  gap: 2px;
+  user-select: none;
+}
+
+.mines-cell {
+  width: 28px;
+  height: 28px;
+  background: #44423e;
+  border: 2px outset #605e58;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ubuntu), sans-serif;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+  line-height: 1;
+  transition: background-color 0.1s ease;
+}
+
+.mines-cell:hover:not(.revealed) {
+  background: #504e49;
+}
+
+.mines-cell:active:not(.revealed) {
+  border-style: inset;
+  background: #383733;
+}
+
+.mines-cell.revealed {
+  background: #2e2d2a;
+  border: 1px solid #3c3b37;
+  cursor: default;
+}
+
+.mines-cell.flagged {
+  font-size: 13px;
+}
+
+.mines-cell.mine {
+  background: #ef4444;
+  border: 1px solid #b91c1c;
+  animation: pulse 1s infinite;
+}
+
+/* Number Colors */
+.mines-cell.num-1 { color: #38bdf8; }
+.mines-cell.num-2 { color: #4ade80; }
+.mines-cell.num-3 { color: #f87171; }
+.mines-cell.num-4 { color: #c084fc; }
+.mines-cell.num-5 { color: #fb923c; }
+.mines-cell.num-6 { color: #2dd4bf; }
+.mines-cell.num-7 { color: #f43f5e; }
+.mines-cell.num-8 { color: #94a3b8; }
+
+/* Light Theme overrides for Minesweeper */
+body.light-theme .mines-toolbar {
+  background: #eae6de;
+  border-color: #d4cfc5;
+}
+
+body.light-theme .mines-select {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #111827;
+}
+
+body.light-theme .mines-board-container {
+  background: #d4cfc5;
+  border-color: #bfbbb2;
+}
+
+body.light-theme .mines-cell {
+  background: #eae6de;
+  border-color: #ffffff #b5b1a8 #b5b1a8 #ffffff;
+}
+
+body.light-theme .mines-cell.revealed {
+  background: #f5f5f5;
+  border-color: #d4cfc5;
+}
+
+/* --------------------------------------------------------------------------
+   GNOME Blocks (Tetris Battle 1v1 Arena) Styling
+   -------------------------------------------------------------------------- */
+#window-tetris .xp-window-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100%;
+  background: radial-gradient(circle at 50% 30%, #1e2538 0%, #0d0f15 100%);
+  color: #ffffff;
+  user-select: none;
+  overflow: auto;
+}
+
+/* Top Battle HUD Bar */
+.t-battle-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 820px;
+  background: linear-gradient(180deg, #242938 0%, #171b26 100%);
+  border: 1px solid #3b4256;
+  border-radius: 10px;
+  padding: 8px 14px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.t-player-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.t-player-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  border: 2px solid #0284c7;
+  object-fit: cover;
+  background: #0f172a;
+}
+
+.t-player-right .t-player-avatar {
+  border-color: var(--ub-orange);
+}
+
+.t-player-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.t-player-rank {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.t-player-right .t-player-rank {
+  color: #f97316;
+}
+
+.t-player-name {
+  font-size: 15px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+}
+
+.t-player-streak {
+  font-size: 10px;
+  color: #94a3b8;
+}
+
+.t-player-streak strong {
+  color: #facc15;
+}
+
+.t-ko-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #dc2626;
+  border: 1px solid #ef4444;
+  border-radius: 6px;
+  padding: 2px 6px;
+  min-width: 32px;
+  box-shadow: 0 0 8px rgba(220, 38, 38, 0.5);
+}
+
+.t-ko-label {
+  font-size: 8px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.t-ko-val {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+/* Center HUD Clock */
+.t-center-hud {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.t-timer-box {
+  background: #090d16;
+  border: 2px solid #0284c7;
+  border-radius: 6px;
+  padding: 3px 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.35);
+}
+
+.t-timer-label {
+  font-size: 8.5px;
+  font-weight: 800;
+  color: #38bdf8;
+  letter-spacing: 1px;
+}
+
+.t-timer-clock {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 900;
+  color: #38bdf8;
+  text-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
+}
+
+.t-diff-select {
+  background: #1e2433;
+  border: 1px solid #3b4256;
+  color: #f1f5f9;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Battle Arena Layout */
+.t-battle-arena {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 840px;
+  margin-bottom: 12px;
+}
+
+.t-player-zone {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.t-side-box {
+  background: linear-gradient(180deg, #202636 0%, #151a24 100%);
+  border: 1px solid #333c52;
+  border-radius: 8px;
+  padding: 6px 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.t-box-title {
+  font-size: 10px;
+  font-weight: 800;
+  color: #94a3b8;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.t-side-box canvas {
+  background: #090d14;
+  border: 1px inset #2d3648;
+  border-radius: 4px;
+}
+
+.t-key-hint {
+  font-size: 9px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.t-board-frame {
+  position: relative;
+  background: #0b0e17;
+  border: 2px solid #3b4256;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: inset 0 2px 14px rgba(0, 0, 0, 0.8), 0 6px 18px rgba(0, 0, 0, 0.5);
+  width: 200px;
+  height: 400px;
+}
+
+#tetris-p1-canvas,
+#tetris-ai-canvas {
+  display: block;
+  width: 200px;
+  height: 400px;
+}
+
+/* Incoming Garbage Bar */
+.t-garbage-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column-reverse;
+  z-index: 5;
+}
+
+.t-garbage-pip {
+  width: 100%;
+  height: 20px;
+  background: #ef4444;
+  box-shadow: 0 0 6px #ef4444;
+  border-bottom: 1px solid #000000;
+  animation: pulseGarbage 0.4s infinite alternate;
+}
+
+@keyframes pulseGarbage {
+  0% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Combo Multiplier Popups */
+.t-combo-popup {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: var(--font-ubuntu), sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  pointer-events: none;
+  opacity: 0;
+  z-index: 15;
+  white-space: nowrap;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.7);
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.t-combo-popup.show {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.15);
+}
+
+.t-combo-tier-1 {
+  background: linear-gradient(135deg, #f59e0b, #ea580c);
+  border: 2px solid #fde047;
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.9);
+}
+
+.t-combo-tier-2 {
+  background: linear-gradient(135deg, #06b6d4, #3b82f6);
+  border: 2px solid #67e8f9;
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.9);
+}
+
+.t-combo-tier-3 {
+  background: linear-gradient(135deg, #a855f7, #ec4899);
+  border: 2px solid #f472b6;
+  text-shadow: 0 0 12px rgba(236, 72, 153, 0.9);
+}
+
+.t-combo-tier-ultra {
+  background: linear-gradient(135deg, #fbbf24, #f43f5e, #8b5cf6);
+  border: 2px solid #ffffff;
+  text-shadow: 0 0 14px rgba(255, 255, 255, 1);
+  animation: ultraPulse 0.3s infinite alternate;
+}
+
+@keyframes ultraPulse {
+  0% { transform: translate(-50%, -50%) scale(1.15); }
+  100% { transform: translate(-50%, -50%) scale(1.25); }
+}
+
+/* Center Battle Arena Hub */
+.t-center-mascots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  min-width: 160px;
+  position: relative;
+}
+
+/* Floating Attack Pill */
+.t-attack-pill {
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  transform: translateX(-50%) scale(0.7);
+  background: linear-gradient(90deg, #f97316, #ef4444, #ec4899);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 4px 14px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 2px 14px rgba(249, 115, 22, 0.5);
+  white-space: nowrap;
+  z-index: 20;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.t-attack-pill.active {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.05);
+}
+
+/* Glassmorphic Arena Card */
+.t-arena-card {
+  background: rgba(20, 25, 45, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(56, 189, 248, 0.15);
+  border-radius: 16px;
+  padding: 16px 14px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.t-arena-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.4), rgba(168, 85, 247, 0.4), transparent);
+}
+
+/* Mascot Duel Row */
+.t-mascot-duel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.t-mascot-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Mascot Ring Avatars */
+.t-mascot-ring {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px;
+  position: relative;
+}
+
+.t-ring-orange {
+  background: linear-gradient(135deg, #f97316, #f59e0b, #fbbf24);
+  box-shadow: 0 0 14px rgba(249, 115, 22, 0.5), inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.t-ring-blue {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #38bdf8);
+  box-shadow: 0 0 14px rgba(59, 130, 246, 0.5), inset 0 0 6px rgba(0, 0, 0, 0.2);
+}
+
+.t-mascot {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.t-mascot-label {
+  font-size: 9px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Live Combo Counter under each mascot */
+.t-combo-counter {
+  font-size: 10px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.3);
+  letter-spacing: 0.5px;
+  min-height: 14px;
+  transition: color 0.2s, text-shadow 0.2s;
+}
+
+.t-combo-counter.active {
+  color: #fbbf24;
+  text-shadow: 0 0 8px rgba(251, 191, 36, 0.6);
+}
+
+.t-combo-counter.hot {
+  color: #ef4444;
+  text-shadow: 0 0 10px rgba(239, 68, 68, 0.8);
+  animation: counterPulse 0.4s infinite alternate;
+}
+
+@keyframes counterPulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.15); }
+}
+
+/* VS Badge */
+.t-vs-badge {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.t-vs-text {
+  font-size: 13px;
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-shadow: 0 0 12px rgba(56, 189, 248, 0.8), 0 0 24px rgba(168, 85, 247, 0.5);
+  z-index: 2;
+}
+
+.t-vs-spark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, transparent 70%);
+  animation: vsSpark 1.8s ease-in-out infinite;
+}
+
+@keyframes vsSpark {
+  0%, 100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0.4; }
+  50% { transform: translate(-50%, -50%) scale(1.4); opacity: 1; }
+}
+
+/* Punch Animations */
+.t-punch-left {
+  transform: translateX(8px) rotate(12deg) scale(1.15) !important;
+}
+
+.t-punch-right {
+  transform: translateX(-8px) rotate(-12deg) scale(1.15) !important;
+}
+
+/* Battle Status Line */
+.t-battle-status {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: center;
+  padding: 0 4px;
+}
+
+/* Match Action Buttons */
+.t-match-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.t-btn-match {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 14px;
+  border-radius: 10px;
+  background: rgba(30, 38, 58, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-family: var(--font-ubuntu), sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(4px);
+  letter-spacing: 0.3px;
+}
+
+.t-btn-icon {
+  font-size: 14px;
+  line-height: 1;
+}
+
+.t-btn-match:hover {
+  background: rgba(45, 55, 80, 0.9);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.t-btn-start {
+  background: linear-gradient(135deg, #e95420, #f97316);
+  border-color: rgba(249, 115, 22, 0.4);
+  box-shadow: 0 2px 16px rgba(233, 84, 32, 0.35);
+}
+
+.t-btn-start:hover {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  box-shadow: 0 4px 20px rgba(233, 84, 32, 0.5);
+  transform: translateY(-1px);
+}
+
+.t-btn-pause {
+  background: rgba(30, 38, 58, 0.85);
+}
+
+.t-btn-pause:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* Responsive Adaptations for Tetris Battle */
+@media (max-width: 820px) {
+  .t-battle-arena {
+    flex-direction: column;
+  }
+  .t-ai-zone {
+    transform: scale(0.85);
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .about-profile-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tetris-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tetris-side-panel {
+    width: 100%;
+    max-width: 220px;
+  }
+}

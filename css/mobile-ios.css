@@ -1,0 +1,818 @@
+/* ==========================================================================
+   iOS Mobile System UI & SpringBoard (mobile-ios.css)
+   Exact Match to Native iPhone 13 Layout (screens <= 768px)
+   ========================================================================== */
+
+/* Hidden on Desktop screens */
+.ios-mobile-screen {
+  display: none;
+}
+
+/* --------------------------------------------------------------------------
+   Mobile Viewport Styles (<= 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Hide Desktop Ubuntu UI Components */
+  #ubuntu-top-panel,
+  #ubuntu-dock,
+  .desktop-icons-container,
+  #messenger-panel,
+  #activities-overlay {
+    display: none !important;
+  }
+
+  body {
+    overflow: hidden;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background: #0b1329;
+  }
+
+  #desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* ------------------------------------------------------------------------
+     iOS Mobile Screen Container with Atmospheric Deep Blue Wallpaper
+     ------------------------------------------------------------------------ */
+  .ios-mobile-screen {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
+    user-select: none;
+    -webkit-user-select: none;
+    background: radial-gradient(circle at 50% 55%, #1d4ed8 0%, #172554 45%, #0b1329 100%);
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* ------------------------------------------------------------------------
+     1. Top Status Bar & iPhone 13 Island / Notch (Always on Top)
+     ------------------------------------------------------------------------ */
+  .ios-status-bar {
+    height: 44px;
+    padding: 8px 22px 0 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 25000 !important;
+    flex-shrink: 0;
+    pointer-events: auto;
+  }
+
+  .ios-status-time {
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: -0.3px;
+    color: #ffffff;
+  }
+
+  /* Center Dynamic Island / Notch Pill */
+  .ios-dynamic-island {
+    width: 96px;
+    height: 26px;
+    background: #000000;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    position: relative;
+    cursor: pointer;
+  }
+
+  .ios-island-mic {
+    width: 5px;
+    height: 5px;
+    background: #10b981;
+    border-radius: 50%;
+    opacity: 0.8;
+  }
+
+  .ios-island-cam {
+    width: 10px;
+    height: 10px;
+    background: #18181b;
+    border: 1.5px solid #27272a;
+    border-radius: 50%;
+    box-shadow: inset 0 0 3px rgba(56, 189, 248, 0.5);
+  }
+
+  .ios-status-icons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* 4 Cellular Signal Bars */
+  .ios-signal-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5px;
+    height: 11px;
+  }
+
+  .ios-signal-bars span {
+    width: 3px;
+    background: #ffffff;
+    border-radius: 1px;
+  }
+
+  .ios-signal-bars span:nth-child(1) { height: 3px; }
+  .ios-signal-bars span:nth-child(2) { height: 5px; }
+  .ios-signal-bars span:nth-child(3) { height: 8px; }
+  .ios-signal-bars span:nth-child(4) { height: 11px; }
+
+  /* iOS WiFi Icon SVG */
+  .ios-wifi-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+
+  /* iPhone Battery Pill */
+  .ios-battery-pill {
+    width: 23px;
+    height: 11.5px;
+    border: 1.5px solid #ffffff;
+    border-radius: 3.5px;
+    padding: 1px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-left: 2px;
+  }
+
+  .ios-battery-pill::after {
+    content: "";
+    position: absolute;
+    right: -3.5px;
+    top: 2.5px;
+    width: 2px;
+    height: 4.5px;
+    background: #ffffff;
+    border-radius: 0 1px 1px 0;
+  }
+
+  .ios-battery-fill {
+    width: 85%;
+    height: 100%;
+    background: #ffffff;
+    border-radius: 1.5px;
+  }
+
+  /* ------------------------------------------------------------------------
+     2. Persistent Top Header Section (Clock + Search on ALL Pages)
+     ------------------------------------------------------------------------ */
+  .ios-header-section {
+    padding: 50px 16px 8px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 20;
+    flex-shrink: 0;
+  }
+
+  /* ------------------------------------------------------------------------
+     3. Multi-Page SpringBoard Viewport & Sliding Track
+     ------------------------------------------------------------------------ */
+  .ios-pages-viewport {
+    flex: 1;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ios-pages-track {
+    display: flex;
+    width: 300%;
+    height: 100%;
+    transition: transform 0.38s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+  }
+
+  .ios-page {
+    width: 100vw;
+    height: 100%;
+    flex-shrink: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 10px 16px 145px 16px;
+    -webkit-overflow-scrolling: touch;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+  }
+
+  .ios-page::-webkit-scrollbar {
+    display: none;
+  }
+
+  .ios-page-content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+  }
+
+  /* ------------------------------------------------------------------------
+     3. Top Glass Clock & Date Card Widget (Page 1)
+     ------------------------------------------------------------------------ */
+  .ios-clock-widget {
+    background: rgba(30, 45, 80, 0.45);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 20px;
+    padding: 16px 20px;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .ios-widget-time {
+    font-size: 46px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: #ffffff;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ios-widget-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.85);
+    margin-top: 4px;
+  }
+
+  /* ------------------------------------------------------------------------
+     4. Spotlight Search Bar (Page 1)
+     ------------------------------------------------------------------------ */
+  .ios-search-container {
+    width: 100%;
+  }
+
+  .ios-search-bar {
+    width: 100%;
+    height: 42px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 21px;
+    display: flex;
+    align-items: center;
+    padding: 0 14px;
+    gap: 10px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  }
+
+  .ios-search-icon {
+    color: #64748b;
+    flex-shrink: 0;
+  }
+
+  .ios-search-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #0f172a;
+    font-size: 14.5px;
+    font-family: inherit;
+    font-weight: 500;
+  }
+
+  .ios-search-input::placeholder {
+    color: #94a3b8;
+  }
+
+  .ios-search-clear {
+    background: #cbd5e1;
+    border: none;
+    color: #475569;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  /* ------------------------------------------------------------------------
+     5. 4-Column App Grid (Page 1)
+     ------------------------------------------------------------------------ */
+  .ios-app-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+
+  .ios-app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    transition: transform 0.12s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ios-app-item:active {
+    transform: scale(0.88);
+  }
+
+  .ios-app-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ios-app-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: #ffffff;
+  }
+
+  .ios-app-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    max-width: 68px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+    letter-spacing: -0.1px;
+  }
+
+  /* ------------------------------------------------------------------------
+     6. Page 2 (Projects Showcase) & Page 3 (Profile & Quick Links)
+     ------------------------------------------------------------------------ */
+  .ios-page-header {
+    margin-top: 4px;
+  }
+
+  .ios-page-badge {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.15);
+    padding: 3px 8px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 4px;
+  }
+
+  .ios-page-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+  }
+
+  .ios-project-cards-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ios-card-widget {
+    background: rgba(30, 45, 80, 0.45);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+    transition: transform 0.12s ease, background 0.12s ease;
+  }
+
+  .ios-card-widget:active {
+    transform: scale(0.97);
+    background: rgba(30, 45, 80, 0.65);
+  }
+
+  .ios-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .ios-card-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  .ios-card-meta h4 {
+    margin: 0;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: #ffffff;
+  }
+
+  .ios-card-meta span {
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 500;
+  }
+
+  .ios-card-desc {
+    margin: 0;
+    font-size: 12px;
+    color: #e2e8f0;
+    line-height: 1.4;
+  }
+
+  .ios-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2px;
+  }
+
+  .ios-btn-pill {
+    background: rgba(56, 189, 248, 0.2);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    color: #38bdf8;
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+
+  /* Page 3 Profile & Quick Connect */
+  .ios-profile-widget {
+    background: rgba(30, 45, 80, 0.45);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 20px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+
+  .ios-profile-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #38bdf8;
+  }
+
+  .ios-profile-info h3 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #ffffff;
+  }
+
+  .ios-profile-sub {
+    margin: 2px 0 0 0;
+    font-size: 13px;
+    color: #38bdf8;
+    font-weight: 600;
+  }
+
+  .ios-profile-loc {
+    display: block;
+    margin-top: 4px;
+    font-size: 11px;
+    color: #94a3b8;
+  }
+
+  .ios-quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .ios-quick-link-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    border-radius: 14px;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.12s ease;
+  }
+
+  .ios-quick-link-btn:active {
+    transform: scale(0.94);
+  }
+
+  .ios-skills-pill-box {
+    background: rgba(30, 45, 80, 0.45);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 18px;
+    padding: 14px 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+
+  .ios-skills-pill-box h4 {
+    margin: 0 0 8px 0;
+    font-size: 13.5px;
+    color: #ffffff;
+    font-weight: 600;
+  }
+
+  .ios-pill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .ios-tag {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 3px 8px;
+    border-radius: 8px;
+  }
+
+  /* ------------------------------------------------------------------------
+     7. High-Contrast Visible iOS Pagination Capsule & Dots (● ○ ○)
+     ------------------------------------------------------------------------ */
+  .ios-page-dots {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    position: absolute;
+    bottom: 124px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.45);
+    z-index: 45;
+  }
+
+  .ios-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ios-dot:active {
+    transform: scale(1.3);
+  }
+
+  .ios-dot.active {
+    width: 22px;
+    height: 8px;
+    border-radius: 6px;
+    background: #ffffff;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 1), 0 2px 6px rgba(0, 0, 0, 0.6);
+  }
+
+  /* ------------------------------------------------------------------------
+     8. Bottom Dock (Contact, About Me, Projects)
+     ------------------------------------------------------------------------ */
+  .ios-dock-wrapper {
+    position: absolute;
+    bottom: 22px;
+    left: 0;
+    width: 100%;
+    padding: 0 14px;
+    z-index: 40;
+  }
+
+  .ios-dock {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(35px);
+    -webkit-backdrop-filter: blur(35px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 30px;
+    padding: 10px 18px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 320px;
+    margin: 0 auto;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .ios-dock-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.12s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .ios-dock-item:active {
+    transform: scale(0.88);
+  }
+
+  .ios-dock-item .ios-app-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 14px;
+  }
+
+  .ios-dock-item .ios-app-label {
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #ffffff;
+    text-align: center;
+    max-width: 66px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+  }
+
+  /* ------------------------------------------------------------------------
+     9. Native iPhone 13 Home Indicator Bar
+     ------------------------------------------------------------------------ */
+  .ios-home-bar {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 5px;
+    background: #ffffff;
+    border-radius: 100px;
+    opacity: 0.9;
+    z-index: 25000 !important;
+    cursor: pointer;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+  }
+
+  .ios-home-bar:active {
+    opacity: 0.4;
+    transform: translateX(-50%) scale(0.95);
+  }
+
+  /* ------------------------------------------------------------------------
+     10. Responsive Window Modal Sheet on Mobile (Starts Below Status Bar)
+     ------------------------------------------------------------------------ */
+  .xp-window {
+    position: fixed !important;
+    top: 48px !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    max-width: 100vw !important;
+    height: calc(100vh - 48px) !important;
+    height: calc(100dvh - 48px) !important;
+    max-height: calc(100dvh - 48px) !important;
+    margin: 0 !important;
+    border-radius: 24px 24px 0 0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-bottom: none !important;
+    z-index: 10000 !important;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.7) !important;
+    background: #18181b !important;
+    overflow: hidden !important;
+    animation: iosModalSlideUp 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  }
+
+  @keyframes iosModalSlideUp {
+    from {
+      transform: translateY(100%);
+      opacity: 0.8;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .xp-titlebar {
+    height: 48px !important;
+    border-radius: 24px 24px 0 0 !important;
+    background: rgba(28, 28, 30, 0.98) !important;
+    backdrop-filter: blur(25px) !important;
+    padding: 0 16px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .xp-titlebar-title {
+    font-size: 15.5px !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.2px !important;
+  }
+
+  .xp-btn-control.xp-btn-min,
+  .xp-btn-control.xp-btn-max {
+    display: none !important;
+  }
+
+  .xp-btn-control.xp-btn-close {
+    width: 30px !important;
+    height: 30px !important;
+    font-size: 14px !important;
+    background: rgba(255, 255, 255, 0.18) !important;
+    color: #ffffff !important;
+    border-radius: 50% !important;
+    font-weight: 700 !important;
+  }
+
+  .xp-window-body {
+    height: calc(100vh - 96px) !important;
+    height: calc(100dvh - 96px) !important;
+    overflow-y: auto !important;
+    padding: 16px 14px 44px 14px !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .xp-content-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 14px !important;
+  }
+
+  /* Tetris Battle restricted to PC/Desktop only */
+  #window-tetris {
+    display: none !important;
+  }
+}

@@ -1,0 +1,554 @@
+/* ==========================================================================
+   Ubuntu Desktop Portfolio - Main Stylesheet (style.css)
+   Authentic Ubuntu Yaru / GNOME Desktop Design System
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Ubuntu+Mono:wght@400;700&display=swap');
+
+:root {
+  /* Ubuntu Official Color Palette */
+  --ub-orange: #e95420;
+  --ub-orange-light: #f27244;
+  --ub-orange-dark: #c33a08;
+  
+  --ub-aubergine-dark: #2c001e;
+  --ub-aubergine-mid: #5e2750;
+  --ub-aubergine-light: #77216f;
+  
+  /* Yaru Dark / GNOME Dark Theme Colors */
+  --ub-dark-bg: #1e1e1e;
+  --ub-dark-surface: #2b2b2b;
+  --ub-dark-header: #353535;
+  --ub-dark-border: #444444;
+  
+  /* UI Dimensions */
+  --top-panel-height: 28px;
+  --dock-width: 58px;
+  
+  /* Light Theme / Window Colors */
+  --ub-window-bg: #f7f7f7;
+  --ub-card-bg: #ffffff;
+  --ub-sidebar-bg: #ebebeb;
+  --ub-text-dark: #111111;
+  --ub-text-muted: #555555;
+  --ub-text-light: #ffffff;
+  --ub-border-light: #dedede;
+  
+  /* Typography */
+  --font-ubuntu: 'Ubuntu', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Ubuntu Mono', 'Courier New', monospace;
+}
+
+/* --------------------------------------------------------------------------
+   Reset & Base Styles
+   -------------------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: var(--font-ubuntu);
+  font-size: 13px;
+  color: var(--ub-text-dark);
+  background-color: var(--ub-aubergine-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Ubuntu Desktop Wallpaper & Canvas
+   -------------------------------------------------------------------------- */
+#desktop {
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - var(--top-panel-height));
+  margin-top: var(--top-panel-height);
+  padding-left: var(--dock-width);
+  overflow: hidden;
+  
+  /* Ubuntu Wallpaper (uwp.jpg) with fallbacks */
+  background-color: var(--ub-aubergine-dark);
+  background-image: 
+    url("../images/uwp.jpg"),
+    url("../uwp.jpg"),
+    url("../images/ubuntu-wallpaper.svg"),
+    radial-gradient(circle at 80% 20%, #e95420 0%, #77216f 35%, #5e2750 70%, #2c001e 100%);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* --------------------------------------------------------------------------
+   Ubuntu Left Dock (Launcher / Dash to Dock)
+   -------------------------------------------------------------------------- */
+#ubuntu-dock {
+  position: fixed;
+  top: var(--top-panel-height);
+  left: 0;
+  bottom: 0;
+  width: var(--dock-width);
+  background: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  z-index: 9990;
+}
+
+.dock-apps-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+}
+
+/* Single Dock Launcher Item */
+.dock-item {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.dock-item:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: scale(1.08);
+}
+
+.dock-item:active {
+  background: rgba(255, 255, 255, 0.22);
+  transform: scale(0.96);
+}
+
+.dock-icon-img {
+  width: 34px;
+  height: 34px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.4));
+  pointer-events: none;
+  transition: transform 0.15s ease;
+}
+
+/* Ubuntu Running Indicator (Orange Pip Dot / Line on Left Edge) */
+.dock-item.running::before {
+  content: "";
+  position: absolute;
+  left: -2px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 14px;
+  background-color: var(--ub-orange);
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(233, 84, 32, 0.8);
+}
+
+.dock-item.active {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.dock-item.active::before {
+  height: 22px;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px #ffffff;
+}
+
+/* Dock Tooltip */
+.dock-item[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(24, 24, 24, 0.95);
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 500;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  z-index: 10000;
+}
+
+.dock-item:hover[data-tooltip]::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Desktop Shortcuts (Ubuntu Nautilus on Desktop)
+   -------------------------------------------------------------------------- */
+.desktop-icons-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 12px;
+  height: 100%;
+  padding: 16px;
+  z-index: 10;
+  position: relative;
+}
+
+.desktop-icon {
+  width: 82px;
+  min-height: 84px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 6px 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.desktop-icon-img {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 4px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+}
+
+.desktop-icon-label {
+  color: #ffffff;
+  font-size: 11.5px;
+  font-weight: 500;
+  line-height: 1.25;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+  padding: 2px 6px;
+  border-radius: 4px;
+  word-break: break-word;
+  max-width: 76px;
+  pointer-events: none;
+}
+
+.desktop-icon:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.desktop-icon:focus,
+.desktop-icon.selected {
+  background: rgba(233, 84, 32, 0.35);
+  border: 1px solid var(--ub-orange);
+  box-shadow: 0 4px 12px rgba(233, 84, 32, 0.3);
+}
+
+.desktop-icon:focus .desktop-icon-label,
+.desktop-icon.selected .desktop-icon-label {
+  background-color: var(--ub-orange);
+  text-shadow: none;
+}
+
+/* --------------------------------------------------------------------------
+   Ubuntu Live Profile Widget (Desktop Notification / Status Card)
+   -------------------------------------------------------------------------- */
+.messenger-panel {
+  position: absolute;
+  top: calc(var(--top-panel-height) + 14px);
+  right: 16px;
+  width: 320px;
+  background: rgba(30, 30, 30, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 20;
+  overflow: hidden;
+  font-family: var(--font-ubuntu);
+  color: #ffffff;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.messenger-header {
+  height: 32px;
+  background: rgba(45, 45, 45, 0.95);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.messenger-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  font-size: 12px;
+  color: #f3f4f6;
+}
+
+.messenger-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.messenger-body {
+  padding: 14px 16px;
+}
+
+.messenger-profile {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.messenger-avatar-wrapper {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  flex-shrink: 0;
+}
+
+.messenger-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 2px solid var(--ub-orange);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  display: block;
+}
+
+.messenger-avatar-status-badge {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  background-color: #22c55e;
+  border: 2px solid #1e1e1e;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.messenger-info {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  flex: 1;
+}
+
+.messenger-name {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.messenger-name:hover {
+  color: var(--ub-orange);
+}
+
+.messenger-status-song {
+  font-size: 11px;
+  color: #f97316;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 500;
+}
+
+.messenger-detail-line {
+  font-size: 11px;
+  color: #9ca3af;
+  display: flex;
+  align-items: flex-start;
+  gap: 5px;
+  line-height: 1.35;
+  margin-top: 1px;
+}
+
+.messenger-detail-line a {
+  color: #60a5fa;
+  text-decoration: none;
+}
+
+.messenger-detail-line a:hover {
+  text-decoration: underline;
+}
+
+.messenger-links-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.messenger-link-simple {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #93c5fd;
+  text-decoration: none;
+  font-size: 11.5px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.08);
+  transition: all 0.15s ease;
+}
+
+.messenger-link-simple:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+}
+
+.messenger-status-footer {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 6px;
+  padding: 6px 10px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11.5px;
+}
+
+.status-dot-green {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #22c55e;
+  box-shadow: 0 0 6px #22c55e;
+}
+
+.status-text-online {
+  font-weight: bold;
+  color: #22c55e;
+}
+
+.status-text-separator {
+  color: #6b7280;
+}
+
+/* ==========================================================================
+   Light Theme Overrides for Desktop, Dock, and Profile Widget
+   ========================================================================== */
+body.light-theme #ubuntu-dock {
+  background: rgba(245, 245, 245, 0.88);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .dock-item:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .dock-item.active {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .dock-item[data-tooltip]::after {
+  background: rgba(255, 255, 255, 0.96);
+  color: #111827;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .desktop-icon:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+body.light-theme .messenger-panel {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.25);
+  color: #111827;
+}
+
+body.light-theme .messenger-header {
+  background: #eae6de;
+  border-bottom: 1px solid #d4cfc5;
+}
+
+body.light-theme .messenger-title-group {
+  color: #111827;
+}
+
+body.light-theme .messenger-name {
+  color: #0f172a;
+}
+
+body.light-theme .messenger-detail-line {
+  color: #4b5563;
+}
+
+body.light-theme .messenger-detail-line a {
+  color: #0284c7;
+}
+
+body.light-theme .messenger-link-simple {
+  background: rgba(0, 0, 0, 0.06);
+  color: #0284c7;
+}
+
+body.light-theme .messenger-link-simple:hover {
+  background: rgba(0, 0, 0, 0.12);
+  color: #0369a1;
+}
+
+body.light-theme .messenger-status-footer {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+body.light-theme .status-text-msg {
+  color: #475569;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Adaptations
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  :root {
+    --dock-width: 48px;
+  }
+
+  .dock-item {
+    width: 38px;
+    height: 38px;
+  }
+
+  .dock-icon-img {
+    width: 28px;
+    height: 28px;
+  }
+
+  .messenger-panel {
+    display: none;
+  }
+}
