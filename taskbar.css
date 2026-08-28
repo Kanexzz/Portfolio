@@ -1,0 +1,964 @@
+/* ==========================================================================
+   Ubuntu Desktop Portfolio - Top Panel & Overlays (taskbar.css)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Ubuntu Top Bar (Panel)
+   -------------------------------------------------------------------------- */
+#ubuntu-top-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: var(--top-panel-height);
+  background: #111111;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  z-index: 9999;
+  font-family: var(--font-ubuntu);
+  font-size: 13px;
+  user-select: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* Panel Groups */
+.panel-left,
+.panel-center,
+.panel-right {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.panel-left {
+  gap: 8px;
+}
+
+/* Activities Button */
+.panel-btn {
+  height: 22px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  border-radius: 11px;
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  font-size: 12.5px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.15s ease;
+}
+
+.panel-btn:hover,
+.panel-btn.active {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+#activities-btn {
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.panel-app-title {
+  color: #d1d5db;
+  font-weight: 500;
+  font-size: 12px;
+  padding: 0 6px;
+}
+
+/* Center Clock Button */
+#panel-clock-btn {
+  font-weight: 500;
+  font-size: 12.5px;
+}
+
+/* Right Quick Settings Pill */
+.panel-system-pill {
+  height: 22px;
+  padding: 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 11px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.panel-system-pill:hover,
+.panel-system-pill.active {
+  background-color: rgba(255, 255, 255, 0.18);
+}
+
+.panel-sys-icon {
+  width: 14px;
+  height: 14px;
+  filter: brightness(1.2);
+}
+
+/* --------------------------------------------------------------------------
+   GNOME Calendar & Notification Center Popover
+   -------------------------------------------------------------------------- */
+#calendar-popover {
+  position: fixed;
+  top: calc(var(--top-panel-height) + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 480px;
+  background: rgba(36, 36, 36, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  display: none;
+  z-index: 10000;
+  overflow: hidden;
+  animation: dropdownFade 0.15s ease-out;
+}
+
+#calendar-popover.open {
+  display: flex;
+}
+
+.calendar-popover-body {
+  display: flex;
+  width: 100%;
+  padding: 16px;
+  gap: 16px;
+}
+
+.calendar-left-section {
+  flex: 1.1;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  padding-right: 14px;
+}
+
+.calendar-today-header {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ub-orange);
+  margin-bottom: 8px;
+}
+
+.calendar-notifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cal-notif-item {
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 11.5px;
+}
+
+.cal-notif-title {
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.cal-notif-text {
+  color: #9ca3af;
+  margin-top: 2px;
+}
+
+.calendar-right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cal-month-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+  font-size: 11px;
+}
+
+.cal-day-header {
+  color: #9ca3af;
+  font-weight: 700;
+}
+
+.cal-day {
+  padding: 4px 0;
+  border-radius: 50%;
+  color: #e5e7eb;
+}
+
+.cal-day.today {
+  background-color: var(--ub-orange);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* --------------------------------------------------------------------------
+   Ubuntu Quick Settings Popover Menu (Right side)
+   -------------------------------------------------------------------------- */
+#quick-settings-popover {
+  position: fixed;
+  top: calc(var(--top-panel-height) + 6px);
+  right: 12px;
+  width: 280px;
+  background: rgba(36, 36, 36, 0.96);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  display: none;
+  flex-direction: column;
+  padding: 12px;
+  gap: 12px;
+  z-index: 10000;
+  animation: dropdownFade 0.15s ease-out;
+}
+
+#quick-settings-popover.open {
+  display: flex;
+}
+
+.settings-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+}
+
+.settings-slider-icon {
+  font-size: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.settings-slider {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  accent-color: var(--ub-orange);
+  background: rgba(255, 255, 255, 0.2);
+  outline: none;
+  cursor: pointer;
+}
+
+.settings-grid-toggles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.setting-toggle-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 10px 12px;
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  font-size: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.setting-toggle-btn.active {
+  background: var(--ub-orange);
+  border-color: var(--ub-orange);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(233, 84, 32, 0.35);
+}
+
+.setting-toggle-btn:hover {
+  filter: brightness(1.15);
+  transform: translateY(-1px);
+}
+
+.setting-toggle-btn:active {
+  transform: translateY(1px);
+}
+
+.setting-toggle-icon {
+  font-size: 14px;
+}
+
+.settings-footer-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 8px;
+}
+
+.settings-icon-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.settings-icon-btn:hover {
+  background: rgba(233, 84, 32, 0.8);
+  border-color: var(--ub-orange);
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   Ubuntu Toast Notification
+   -------------------------------------------------------------------------- */
+#ubuntu-toast {
+  position: fixed;
+  top: calc(var(--top-panel-height) + 12px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background: rgba(30, 30, 30, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 8px 18px;
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  font-size: 12.5px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  z-index: 10010;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#ubuntu-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* --------------------------------------------------------------------------
+   Ubuntu Lock Screen Overlay
+   -------------------------------------------------------------------------- */
+#ubuntu-lock-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--ub-aubergine-dark);
+  background-image: 
+    url("../images/uwp.jpg"),
+    url("../images/ubuntu-wallpaper.svg"),
+    radial-gradient(circle at 80% 20%, #e95420 0%, #77216f 35%, #5e2750 70%, #2c001e 100%);
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10005;
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  animation: fadeIn 0.25s ease-out;
+}
+
+#ubuntu-lock-screen.active {
+  display: flex;
+}
+
+.lock-time-box {
+  text-align: center;
+  margin-bottom: 36px;
+}
+
+.lock-time {
+  font-size: 72px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.lock-date {
+  font-size: 18px;
+  font-weight: 400;
+  color: #e5e7eb;
+  margin-top: 4px;
+}
+
+.lock-user-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 24px 32px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  width: 300px;
+}
+
+.lock-user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 3px solid var(--ub-orange);
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(233, 84, 32, 0.4);
+}
+
+.lock-user-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.lock-password-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 10px;
+}
+
+.lock-password-input {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  font-size: 13px;
+  outline: none;
+  text-align: center;
+  transition: all 0.15s ease;
+}
+
+.lock-password-input:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--ub-orange);
+  box-shadow: 0 0 8px rgba(233, 84, 32, 0.5);
+}
+
+.lock-unlock-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--ub-orange);
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.lock-unlock-btn:hover {
+  background-color: #f26c38;
+}
+
+/* --------------------------------------------------------------------------
+   Ubuntu Power Off / Restart Modal Dialog
+   -------------------------------------------------------------------------- */
+#ubuntu-power-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10015;
+  animation: fadeIn 0.15s ease-out;
+}
+
+#ubuntu-power-modal.active {
+  display: flex;
+}
+
+.power-modal-card {
+  width: 360px;
+  background: #242424;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 12px;
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.6);
+  padding: 24px;
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.power-modal-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(233, 84, 32, 0.15);
+  border: 2px solid var(--ub-orange);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: var(--ub-orange);
+  margin-bottom: 12px;
+}
+
+.power-modal-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.power-modal-desc {
+  font-size: 12.5px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+.power-modal-buttons {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.power-btn-action {
+  flex: 1;
+  padding: 9px 12px;
+  border-radius: 6px;
+  font-family: var(--font-ubuntu);
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+}
+
+.power-btn-cancel {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.power-btn-cancel:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.power-btn-restart {
+  background: #3b82f6;
+  color: #ffffff;
+}
+
+.power-btn-restart:hover {
+  background: #2563eb;
+}
+
+.power-btn-off {
+  background: var(--ub-orange);
+  color: #ffffff;
+}
+
+.power-btn-off:hover {
+  background: #f26c38;
+}
+
+/* Shutdown Screen */
+#ubuntu-shutdown-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #0d0d0d;
+  color: #ffffff;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10020;
+  font-family: var(--font-ubuntu);
+}
+
+#ubuntu-shutdown-screen.active {
+  display: flex;
+}
+
+.shutdown-logo {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 24px;
+  animation: pulse 2s infinite;
+}
+
+.shutdown-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: var(--ub-orange);
+  border: none;
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 16px;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* --------------------------------------------------------------------------
+   App Grid Overview Overlay (GNOME App Grid Matching Screenshot)
+   -------------------------------------------------------------------------- */
+#app-grid-overlay {
+  position: fixed;
+  top: var(--top-panel-height);
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - var(--top-panel-height));
+  background-color: rgba(18, 18, 18, 0.75);
+  background-image: 
+    url("../images/uwp.jpg"),
+    url("../images/ubuntu-wallpaper.svg");
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(28px) brightness(0.65);
+  -webkit-backdrop-filter: blur(28px) brightness(0.65);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 36px;
+  padding-bottom: 70px;
+  z-index: 9995;
+  animation: fadeIn 0.2s ease-out;
+}
+
+#app-grid-overlay.open {
+  display: flex;
+}
+
+/* Centered Search Bar matching 2nd image */
+.app-grid-search-wrapper {
+  position: relative;
+  width: 320px;
+  margin-bottom: 48px;
+}
+
+.app-grid-search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.app-grid-search {
+  width: 100%;
+  padding: 7px 14px 7px 34px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #ffffff;
+  font-family: var(--font-ubuntu);
+  font-size: 13px;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.app-grid-search::placeholder {
+  color: #9ca3af;
+}
+
+.app-grid-search:focus {
+  background: rgba(0, 0, 0, 0.65);
+  border-color: var(--ub-orange);
+  box-shadow: 0 0 10px rgba(233, 84, 32, 0.4);
+}
+
+/* 6-Column App Icons Grid */
+.app-grid-items {
+  display: grid;
+  grid-template-columns: repeat(6, 120px);
+  gap: 32px 28px;
+  max-width: 980px;
+  width: 100%;
+  justify-content: center;
+  align-content: flex-start;
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.app-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 8px;
+  border-radius: 12px;
+  transition: all 0.15s ease;
+  width: 120px;
+  user-select: none;
+}
+
+.app-grid-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-3px);
+}
+
+.app-grid-item:active {
+  transform: scale(0.96);
+}
+
+.app-grid-icon {
+  width: 60px;
+  height: 60px;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
+  pointer-events: none;
+  transition: transform 0.15s ease;
+}
+
+.app-grid-item:hover .app-grid-icon {
+  transform: scale(1.06);
+}
+
+.app-grid-label {
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.95);
+  line-height: 1.25;
+  word-break: break-word;
+}
+
+/* Bottom View Switcher (Frequent / All) matching 2nd image */
+.app-grid-bottom-bar {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.app-grid-switcher {
+  display: flex;
+  background: rgba(38, 38, 38, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45);
+}
+
+.app-switcher-btn {
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  font-family: var(--font-ubuntu);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 22px;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.app-switcher-btn.active {
+  background: var(--ub-orange);
+  color: #ffffff;
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.app-switcher-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Animations */
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) (translateX(-50%));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* ==========================================================================
+   Ubuntu Top Panel & Popovers Light Theme Overrides
+   ========================================================================== */
+body.light-theme #ubuntu-top-panel {
+  background: #eae6de;
+  color: #18181b;
+  border-bottom: 1px solid #d4cfc5;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .panel-btn {
+  color: #18181b;
+}
+
+body.light-theme .panel-btn:hover,
+body.light-theme .panel-btn.active {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .panel-app-title {
+  color: #52525b;
+}
+
+body.light-theme .panel-system-pill:hover,
+body.light-theme .panel-system-pill.active {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-theme .panel-sys-icon {
+  filter: invert(0.85) brightness(0.2);
+}
+
+body.light-theme #calendar-popover,
+body.light-theme #quick-settings-popover {
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.25);
+  color: #18181b;
+}
+
+body.light-theme .calendar-left-section {
+  border-right: 1px solid #e5e7eb;
+}
+
+body.light-theme .cal-notif-item {
+  background: #f1f5f9;
+  border: 1px solid #e2e8f0;
+}
+
+body.light-theme .cal-notif-title {
+  color: #0f172a;
+}
+
+body.light-theme .cal-notif-text {
+  color: #64748b;
+}
+
+body.light-theme .cal-month-title {
+  color: #18181b;
+}
+
+body.light-theme .cal-day {
+  color: #18181b;
+}
+
+body.light-theme .settings-slider {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+body.light-theme .setting-toggle-btn:not(.active) {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #18181b;
+}
+
+body.light-theme .settings-footer-row {
+  border-top: 1px solid #e5e7eb;
+}
+
+body.light-theme .settings-icon-btn {
+  background: #f1f5f9;
+  border-color: #e2e8f0;
+  color: #18181b;
+}
+
+body.light-theme #app-grid-overlay {
+  background: rgba(245, 245, 245, 0.96);
+}
+
+body.light-theme .app-grid-search {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  color: #18181b;
+}
+
+body.light-theme .app-grid-label {
+  color: #18181b;
+}
+
+body.light-theme .app-grid-item:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 768px) {
+  #calendar-popover {
+    width: calc(100vw - 20px);
+    flex-direction: column;
+  }
+  .calendar-left-section {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+  }
+  .app-grid-items {
+    grid-template-columns: repeat(3, 90px);
+    gap: 16px;
+  }
+}

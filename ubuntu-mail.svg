@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="mail-ub-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#0369a1"/>
+    </linearGradient>
+    <filter id="mail-ub-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2.5" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#mail-ub-shadow)">
+    <!-- Envelope Body -->
+    <rect x="5" y="11" width="38" height="26" rx="4" fill="url(#mail-ub-grad)"/>
+    <!-- Fold Line -->
+    <path d="M5 11 L24 25 L43 11" fill="none" stroke="#ffffff" stroke-width="2"/>
+    <path d="M5 37 L19 24 M43 37 L29 24" stroke="#ffffff" stroke-width="1.2" opacity="0.6"/>
+    <!-- Orange accent notification dot -->
+    <circle cx="38" cy="12" r="4.5" fill="#e95420" stroke="#ffffff" stroke-width="1.5"/>
+  </g>
+</svg>

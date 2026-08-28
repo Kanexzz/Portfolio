@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="cog-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#9ca3af"/>
+      <stop offset="50%" stop-color="#6b7280"/>
+      <stop offset="100%" stop-color="#374151"/>
+    </linearGradient>
+    <filter id="cog-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#cog-shadow)" transform="translate(4, 4)">
+    <!-- Big Cog -->
+    <circle cx="18" cy="18" r="14" fill="url(#cog-grad)"/>
+    <circle cx="18" cy="18" r="6" fill="#1e1e1e"/>
+    <!-- Orange accent hub -->
+    <circle cx="18" cy="18" r="4" fill="#e95420"/>
+
+    <!-- Small Cog -->
+    <g transform="translate(16, 16)">
+      <circle cx="10" cy="10" r="9" fill="#4b5563"/>
+      <circle cx="10" cy="10" r="3.5" fill="#1e1e1e"/>
+    </g>
+  </g>
+</svg>

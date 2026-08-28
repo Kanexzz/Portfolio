@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <radialGradient id="ub-circle-bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f26c38"/>
+      <stop offset="70%" stop-color="#e95420"/>
+      <stop offset="100%" stop-color="#c73f10"/>
+    </radialGradient>
+    <filter id="ub-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000000" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- Orange Disc -->
+  <circle cx="24" cy="24" r="22" fill="url(#ub-circle-bg)" filter="url(#ub-shadow)"/>
+
+  <!-- Ubuntu "Circle of Friends" Logo (White) -->
+  <g fill="#ffffff" stroke="#e95420" stroke-width="1.8" stroke-linecap="round">
+    <!-- Main Ring Segments -->
+    <!-- Top Segment -->
+    <path d="M16 17 A11.5 11.5 0 0 1 32 17" fill="none" stroke="#ffffff" stroke-width="4.5"/>
+    <!-- Bottom Right Segment -->
+    <path d="M34 23.5 A11.5 11.5 0 0 1 25.5 35" fill="none" stroke="#ffffff" stroke-width="4.5"/>
+    <!-- Bottom Left Segment -->
+    <path d="M22.5 35 A11.5 11.5 0 0 1 14 23.5" fill="none" stroke="#ffffff" stroke-width="4.5"/>
+  </g>
+
+  <!-- 3 Heads / Nodes -->
+  <!-- Top Right Node -->
+  <circle cx="36" cy="19" r="3.2" fill="#ffffff"/>
+  <!-- Left Node -->
+  <circle cx="12" cy="19" r="3.2" fill="#ffffff"/>
+  <!-- Bottom Node -->
+  <circle cx="24" cy="37.5" r="3.2" fill="#ffffff"/>
+</svg>

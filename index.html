@@ -1,0 +1,1211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Janrick Alo Portfolio.">
+  <title>Janrick Alo - Portfolio</title>
+
+  <!-- Ubuntu Typography & Theme Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/windows.css">
+  <link rel="stylesheet" href="css/taskbar.css">
+  <link rel="stylesheet" href="css/mobile-ios.css">
+</head>
+
+<body>
+
+  <!-- =========================================================================
+       1. UBUNTU TOP PANEL
+       ========================================================================= -->
+  <header id="ubuntu-top-panel" role="banner" aria-label="Ubuntu Top Panel">
+    <!-- Left: Activities & Active App Title -->
+    <div class="panel-left">
+      <button id="activities-btn" class="panel-btn" type="button" aria-label="Open Activities Overview">
+        Activities
+      </button>
+      <span id="panel-app-title" class="panel-app-title">Ubuntu Desktop</span>
+    </div>
+
+    <!-- Center: Live Clock & Date -->
+    <div class="panel-center">
+      <button id="panel-clock-btn" class="panel-btn" type="button" aria-label="Toggle Calendar and Notifications">
+        Loading date...
+      </button>
+    </div>
+
+    <!-- Right: System Status & Quick Settings -->
+    <div class="panel-right">
+      <button id="system-menu-btn" class="panel-system-pill" type="button" aria-label="Toggle System Quick Settings">
+        <img class="panel-sys-icon" src="images/icons/ubuntu-wifi.svg" alt="Wi-Fi">
+        <img class="panel-sys-icon" src="images/icons/ubuntu-volume.svg" alt="Volume">
+        <img class="panel-sys-icon" src="images/icons/ubuntu-power.svg" alt="Power">
+      </button>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       2. UBUNTU LEFT DOCK (LAUNCHER)
+       ========================================================================= -->
+  <nav id="ubuntu-dock" role="navigation" aria-label="Ubuntu App Launcher">
+    <div class="dock-apps-group">
+      <!-- 1. Files / About Me -->
+      <button class="dock-item" data-window="about" data-tooltip="About Me" type="button" aria-label="Open About Me">
+        <img class="dock-icon-img" src="images/icons/ubuntu-files.svg" alt="Files">
+      </button>
+
+      <!-- 2. Terminal / Projects -->
+      <button class="dock-item" data-window="projects" data-tooltip="Projects" type="button" aria-label="Open Projects">
+        <img class="dock-icon-img" src="images/icons/ubuntu-terminal.svg" alt="Projects">
+      </button>
+
+      <!-- 3. Software Center / Education -->
+      <button class="dock-item" data-window="education" data-tooltip="Education" type="button"
+        aria-label="Open Education">
+        <img class="dock-icon-img" src="images/icons/ubuntu-software.svg" alt="Education">
+      </button>
+
+      <!-- 5. Settings / Skills -->
+      <button class="dock-item" data-window="skills" data-tooltip="Skills" type="button" aria-label="Open Skills">
+        <img class="dock-icon-img" src="images/icons/ubuntu-settings.svg" alt="Skills">
+      </button>
+
+      <!-- 6. Contacts / References -->
+      <button class="dock-item" data-window="references" data-tooltip="References" type="button"
+        aria-label="Open References">
+        <img class="dock-icon-img" src="images/icons/ubuntu-contacts.svg" alt="References">
+      </button>
+
+      <!-- 7. Mail / Contact -->
+      <button class="dock-item" data-window="contact" data-tooltip="Contact" type="button" aria-label="Open Contact">
+        <img class="dock-icon-img" src="images/icons/ubuntu-mail.svg" alt="Contact">
+      </button>
+    </div>
+
+    <!-- 9-Dot App Grid Launcher at bottom of dock -->
+    <button id="dock-grid-btn" class="dock-item" data-tooltip="Show Applications" type="button"
+      aria-label="Show All Applications">
+      <img class="dock-icon-img" src="images/icons/ubuntu-grid.svg" alt="Applications">
+    </button>
+  </nav>
+
+  <!-- =========================================================================
+       3. DESKTOP CANVAS & SHORTCUTS
+       ========================================================================= -->
+  <main id="desktop" role="main" aria-label="Ubuntu Desktop Canvas">
+
+    <!-- Desktop Icons Container -->
+    <div class="desktop-icons-container" role="toolbar" aria-label="Desktop Shortcuts"></div>
+
+    <!-- =======================================================================
+         IOS MOBILE SPRINGBOARD HOME SCREEN (Matches User Reference Image)
+         ======================================================================= -->
+    <div id="ios-mobile-screen" class="ios-mobile-screen" aria-label="Mobile Home Screen">
+      
+      <!-- 1. Top Status Bar & iPhone Island / Notch (Matches User Image) -->
+      <div class="ios-status-bar">
+        <span id="ios-live-time" class="ios-status-time">9:41</span>
+        
+        <!-- iPhone Island / Notch -->
+        <div class="ios-dynamic-island" onclick="if(window.WindowManager){window.WindowManager.open('about');}">
+          <div class="ios-island-mic"></div>
+          <div class="ios-island-cam"></div>
+        </div>
+
+        <div class="ios-status-icons">
+          <!-- 4 Cellular Signal Bars -->
+          <div class="ios-signal-bars">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <!-- Authentic Apple iOS WiFi Icon (3 Arcs + Center Dot) -->
+          <svg class="ios-wifi-icon" viewBox="0 0 24 24" width="16" height="16" fill="none">
+            <circle cx="12" cy="18.5" r="1.6" fill="#ffffff"/>
+            <path d="M7.8 14.2C10.1 12 13.9 12 16.2 14.2" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M4.5 10.5C8.6 6.8 15.4 6.8 19.5 10.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M1.5 6.8C7.3 1.8 16.7 1.8 22.5 6.8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <!-- Battery Pill -->
+          <div class="ios-battery-pill">
+            <div class="ios-battery-fill"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Persistent Clock, Date & Spotlight Search (Maintained across ALL Pages) -->
+      <div class="ios-header-section">
+        <!-- Large Glass Clock & Date Card Widget -->
+        <div class="ios-clock-widget">
+          <div class="ios-widget-time" id="ios-widget-clock">09:38</div>
+          <div class="ios-widget-date" id="ios-widget-date">Friday, August 28</div>
+        </div>
+
+        <!-- Spotlight Search Bar -->
+        <div class="ios-search-container">
+          <div class="ios-search-bar">
+            <svg class="ios-search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="text" id="ios-search-input" class="ios-search-input" placeholder="Search portfolio..." autocomplete="off">
+            <button id="ios-search-clear" class="ios-search-clear" type="button" aria-label="Clear Search" style="display:none;">✕</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Main SpringBoard Multi-Page Viewport & Slider -->
+      <div id="ios-pages-viewport" class="ios-pages-viewport">
+        <div id="ios-pages-track" class="ios-pages-track">
+          
+          <!-- ================= PAGE 1: Core Apps ================= -->
+          <div class="ios-page" data-page="0">
+            <div class="ios-page-content">
+              
+              <!-- Page 1 4-Column App Grid -->
+              <div class="ios-app-grid" role="list">
+                
+                <!-- 1. Projects -->
+                <button class="ios-app-item" data-window="projects" data-title="Projects" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">
+                    <svg viewBox="0 0 24 24" fill="#ffffff">
+                      <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Projects</span>
+                </button>
+
+                <!-- 2. About Me -->
+                <button class="ios-app-item" data-window="about" data-title="About Me" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #38bdf8, #0284c7);">
+                    <svg viewBox="0 0 24 24" fill="#ffffff">
+                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">About Me</span>
+                </button>
+
+                <!-- 3. Education -->
+                <button class="ios-app-item" data-window="education" data-title="Education" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                      <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Education</span>
+                </button>
+
+                <!-- 4. Skills -->
+                <button class="ios-app-item" data-window="skills" data-title="Skills" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="3"/>
+                      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Skills</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PAGE 2: Portfolio Utilities & Direct Contact ================= -->
+          <div class="ios-page" data-page="1">
+            <div class="ios-page-content">
+              
+              <!-- Page 2 4-Column App Grid -->
+              <div class="ios-app-grid" role="list" style="margin-top: 12px;">
+                
+                <!-- 1. References -->
+                <button class="ios-app-item" data-window="references" data-title="References" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="9" cy="7" r="4"></circle>
+                      <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                      <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">References</span>
+                </button>
+
+                <!-- 2. Contact -->
+                <button class="ios-app-item" data-window="contact" data-title="Contact" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #a855f7, #9333ea);">
+                    <svg viewBox="0 0 24 24" fill="#ffffff">
+                      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Contact</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- ================= PAGE 3: Games ================= -->
+          <div class="ios-page" data-page="2">
+            <div class="ios-page-content">
+              
+              <!-- Page 3 4-Column App Grid -->
+              <div class="ios-app-grid" role="list" style="margin-top: 12px;">
+                
+                <!-- 1. Minesweeper -->
+                <button class="ios-app-item" data-window="mines" data-title="Minesweeper" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #e11d48, #be123c);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="7"/>
+                      <line x1="12" y1="1" x2="12" y2="5"/>
+                      <line x1="12" y1="19" x2="12" y2="23"/>
+                      <line x1="1" y1="12" x2="5" y2="12"/>
+                      <line x1="19" y1="12" x2="23" y2="12"/>
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Mines</span>
+                </button>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Functional Pagination Dots (Interactive Click & Swipe) -->
+      <div id="ios-page-dots" class="ios-page-dots" role="tablist" aria-label="SpringBoard Page Indicator">
+        <button class="ios-dot active" data-page-index="0" type="button" role="tab" aria-label="Page 1"></button>
+        <button class="ios-dot" data-page-index="1" type="button" role="tab" aria-label="Page 2"></button>
+        <button class="ios-dot" data-page-index="2" type="button" role="tab" aria-label="Page 3"></button>
+      </div>
+
+      <!-- 3. Translucent Glass Bottom Dock (Only Contact, About Me, and Projects) -->
+      <div class="ios-dock-wrapper">
+        <div class="ios-dock">
+          
+          <!-- 1. Contact -->
+          <button class="ios-dock-item" data-window="contact" type="button" aria-label="Contact">
+            <div class="ios-app-icon" style="background: linear-gradient(135deg, #a855f7, #9333ea);">
+              <svg viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+              </svg>
+            </div>
+            <span class="ios-app-label">Contact</span>
+          </button>
+
+          <!-- 2. About Me -->
+          <button class="ios-dock-item" data-window="about" type="button" aria-label="About Me">
+            <div class="ios-app-icon" style="background: linear-gradient(135deg, #38bdf8, #0284c7);">
+              <svg viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+              </svg>
+            </div>
+            <span class="ios-app-label">About Me</span>
+          </button>
+
+          <!-- 3. Projects -->
+          <button class="ios-dock-item" data-window="projects" type="button" aria-label="Projects">
+            <div class="ios-app-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">
+              <svg viewBox="0 0 24 24" fill="#ffffff">
+                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+              </svg>
+            </div>
+            <span class="ios-app-label">Projects</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- 4. Interactive iPhone 13 Home Indicator Bar -->
+      <div id="ios-home-bar" class="ios-home-bar" role="button" tabindex="0" aria-label="Return to Homepage"></div>
+
+    </div>
+
+    <!-- =======================================================================
+         4. PORTFOLIO WINDOWS (Ubuntu Yaru Headerbar & Cards)
+         ======================================================================= -->
+
+    <!-- 1. ABOUT ME WINDOW -->
+    <section id="window-about" class="xp-window" style="width: 680px; min-height: 440px; display: none;"
+      aria-label="About Me Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-files.svg" alt="" aria-hidden="true">
+          <span>About Me - Janrick Alo</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body">
+        <div class="about-window-content">
+
+          <!-- Profile Header -->
+          <div class="about-profile-header">
+            <div class="about-photo-container">
+              <img class="about-photo" src="images/prof.jpg" alt="Janrick Alo photo">
+            </div>
+            <div class="about-profile-meta">
+              <h1 class="about-name">Janrick Alo</h1>
+              <h2 class="about-title">Web Developer</h2>
+              <div class="about-location">
+                <span>📍 Talisay City, Negros Occidental, Philippines</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lower About Me Card -->
+          <article class="about-text-card">
+            <h3 class="about-section-heading">About Me</h3>
+            <p class="about-description">
+              I am a motivated and aspiring Web Developer with a passion for creating responsive, user-friendly, and functional websites. I enjoy learning new technologies, solving problems through code, and turning ideas into practical digital solutions. My career goal is to grow as a Web Developer while continuously improving my technical skills and creating meaningful web experiences.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. PROJECTS WINDOW -->
+    <section id="window-projects" class="xp-window" style="width: 720px; min-height: 460px; display: none;"
+      aria-label="Projects Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-terminal.svg" alt="" aria-hidden="true">
+          <span>Projects - Code Portfolio</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body">
+
+        <!-- Project 1 -->
+        <article class="xp-content-card">
+          <h3 class="xp-card-title">Logistic Management System</h3>
+          <p class="xp-card-text">
+            A web-based logistics management system designed to manage clients, drivers, warehouse staff, deliveries,
+            and shipment information.
+          </p>
+          <div class="xp-badge-list">
+            <span class="xp-badge">Bootstrap</span>
+            <span class="xp-badge">PHP</span>
+            <span class="xp-badge">MySQL</span>
+            <span class="xp-badge">JavaScript</span>
+          </div>
+          <div>
+            <button class="xp-btn-action" type="button">🌐 View Project</button>
+            <button class="xp-btn-action" type="button">📁 GitHub Repository</button>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="xp-content-card">
+          <h3 class="xp-card-title">Faculty Scheduler Management System</h3>
+          <p class="xp-card-text">
+            A system designed to help organize and manage faculty schedules and teaching assignments.
+          </p>
+          <div class="xp-badge-list">
+            <span class="xp-badge">Python</span>
+            <span class="xp-badge">MySQL</span>
+          </div>
+          <div>
+            <button class="xp-btn-action" type="button">🌐 View Project</button>
+            <button class="xp-btn-action" type="button">📁 GitHub Repository</button>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="xp-content-card">
+          <h3 class="xp-card-title">Procurement Request and Supplier Management System</h3>
+          <p class="xp-card-text">
+            A web-based system designed to manage procurement requests and supplier information within an educational
+            institution.
+          </p>
+          <div class="xp-badge-list">
+            <span class="xp-badge">HTML</span>
+            <span class="xp-badge">CSS</span>
+            <span class="xp-badge">JavaScript</span>
+            <span class="xp-badge">Bootstrap</span>
+            <span class="xp-badge">PHP</span>
+            <span class="xp-badge">MySQL</span>
+          </div>
+          <div>
+            <button class="xp-btn-action" type="button">🌐 View Project</button>
+            <button class="xp-btn-action" type="button">📁 GitHub Repository</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 3. EDUCATION WINDOW -->
+    <section id="window-education" class="xp-window" style="width: 650px; min-height: 380px; display: none;"
+      aria-label="Education Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-software.svg" alt="" aria-hidden="true">
+          <span>Education & Credentials</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body">
+        
+        <!-- College / University -->
+        <article class="xp-content-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
+            <h3 class="xp-card-title" style="margin: 0; font-size: 15.5px;">Bachelor of Science in Information System</h3>
+            <span class="xp-badge" style="background-color: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">2024 - 2027</span>
+          </div>
+          <p class="xp-card-subtitle" style="margin: 4px 0;">Carlos Hilado Memorial State University</p>
+          <p class="xp-card-text" style="font-weight: 600; color: #ffffff; margin-top: 2px;">Bachelor</p>
+        </article>
+
+        <!-- High School -->
+        <article class="xp-content-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
+            <h3 class="xp-card-title" style="margin: 0; font-size: 15.5px;">Rafael B. Lacson Memorial High School</h3>
+            <span class="xp-badge" style="background-color: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: #fbbf24;">2018 - 2023</span>
+          </div>
+          <p class="xp-card-text" style="margin-top: 4px; font-weight: 600; color: #ffffff;">High School Diploma</p>
+        </article>
+
+        <!-- Elementary -->
+        <article class="xp-content-card">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
+            <h3 class="xp-card-title" style="margin: 0; font-size: 15.5px;">Talisay Elementary School</h3>
+            <span class="xp-badge" style="background-color: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">2011 - 2017</span>
+          </div>
+          <p class="xp-card-text" style="margin-top: 4px; font-weight: 600; color: #ffffff;">Elementary School Diploma</p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 4. SKILLS WINDOW -->
+    <section id="window-skills" class="xp-window" style="width: 660px; min-height: 420px; display: none;"
+      aria-label="Skills Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-settings.svg" alt="" aria-hidden="true">
+          <span>Skills & Tools</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body">
+
+        <!-- 1. Languages -->
+        <article class="xp-content-card">
+          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+            <span>⚡</span> Languages
+          </h3>
+          <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
+            <span class="xp-skill-pill lang">HTML5</span>
+            <span class="xp-skill-pill lang">CSS3</span>
+            <span class="xp-skill-pill lang">JavaScript</span>
+            <span class="xp-skill-pill lang">Python</span>
+            <span class="xp-skill-pill lang">PHP</span>
+          </div>
+        </article>
+
+        <!-- 2. Frontend -->
+        <article class="xp-content-card">
+          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+            <span>🎨</span> Frontend
+          </h3>
+          <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
+            <span class="xp-skill-pill front">Bootstrap</span>
+            <span class="xp-skill-pill front">Responsive Web Design</span>
+            <span class="xp-skill-pill front">UI/UX Design</span>
+          </div>
+        </article>
+
+        <!-- 3. Backend -->
+        <article class="xp-content-card">
+          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+            <span>⚙️</span> Backend
+          </h3>
+          <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
+            <span class="xp-skill-pill back">Python</span>
+            <span class="xp-skill-pill back">PHP</span>
+            <span class="xp-skill-pill back">CRUD Development</span>
+            <span class="xp-skill-pill back">API Integration</span>
+          </div>
+        </article>
+
+        <!-- 4. Databases -->
+        <article class="xp-content-card">
+          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+            <span>🗄️</span> Databases
+          </h3>
+          <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
+            <span class="xp-skill-pill db">MySQL</span>
+            <span class="xp-skill-pill db">Database Management</span>
+            <span class="xp-skill-pill db">SQL</span>
+          </div>
+        </article>
+
+        <!-- 5. Tools -->
+        <article class="xp-content-card">
+          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+            <span>🛠️</span> Tools
+          </h3>
+          <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
+            <span class="xp-skill-pill tool">VS Code</span>
+            <span class="xp-skill-pill tool">GitHub</span>
+            <span class="xp-skill-pill tool">Git</span>
+            <span class="xp-skill-pill tool">Figma</span>
+            <span class="xp-skill-pill tool">Canva</span>
+            <span class="xp-skill-pill tool">XAMPP</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 5. REFERENCES WINDOW -->
+    <section id="window-references" class="xp-window" style="width: 650px; min-height: 380px; display: none;"
+      aria-label="References Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-contacts.svg" alt="" aria-hidden="true">
+          <span>Professional Reference</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body">
+        <article class="xp-content-card" style="border-left: 4px solid var(--ub-orange);">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;">
+            <div>
+              <h3 class="xp-card-title" style="margin: 0; font-size: 16px; color: #ffffff;">Jason Saldua, MIT</h3>
+              <p class="xp-card-subtitle" style="margin: 3px 0 0 0;">Information Technology Professional</p>
+            </div>
+            <span class="xp-badge" style="background-color: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #d1d5db;">Senior colleague • March 2025</span>
+          </div>
+          <p class="xp-card-text" style="font-style: italic; line-height: 1.7; color: #f1f5f9; margin-top: 12px; font-size: 14px;">
+            "I've had the opportunity to work with Janrick Alo on several projects, and I can confidently recommend him as a dedicated and capable developer. His problem-solving skills, willingness to learn, and ability to create practical solutions make him a valuable member of any team."
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 7. CONTACT WINDOW -->
+    <section id="window-contact" class="xp-window" style="width: 620px; min-height: 420px; display: none;" aria-label="Contact Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-mail.svg" alt="" aria-hidden="true">
+          <span>Contact - Janrick Alo</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize" aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize" aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body">
+        
+        <article class="xp-content-card">
+          <h3 class="xp-card-title" style="margin-bottom: 14px; font-size: 16px;">Contact Information</h3>
+          
+          <div class="contact-info-list" style="display: flex; flex-direction: column; gap: 10px;">
+            
+            <!-- Email -->
+            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span style="font-size: 20px;">✉️</span>
+              <div>
+                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Email</strong>
+                <a href="mailto:janrickqt@gmail.com" style="font-size: 14px; font-weight: 600; color: #38bdf8; text-decoration: none;">janrickqt@gmail.com</a>
+              </div>
+            </div>
+
+            <!-- Phone / WhatsApp -->
+            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span style="font-size: 20px;">📱</span>
+              <div>
+                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Phone / WhatsApp</strong>
+                <a href="https://wa.me/639928685257" target="_blank" rel="noopener noreferrer" style="font-size: 14px; font-weight: 600; color: #38bdf8; text-decoration: none;">+63 992 868 5257</a>
+              </div>
+            </div>
+
+            <!-- GitHub -->
+            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span style="font-size: 20px;">💽</span>
+              <div>
+                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">GitHub</strong>
+                <a href="https://github.com/Kanexzz" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 500; color: #38bdf8; text-decoration: none;">github.com/Kanexzz</a>
+              </div>
+            </div>
+
+            <!-- LinkedIn -->
+            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span style="font-size: 20px;">🌐</span>
+              <div>
+                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">LinkedIn</strong>
+                <a href="https://www.linkedin.com/in/janrick-alo-3794bb356/" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 500; color: #38bdf8; text-decoration: none;">linkedin.com/in/janrick-alo-3794bb356</a>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span style="font-size: 20px;">📍</span>
+              <div>
+                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Location</strong>
+                <span style="font-size: 13.5px; color: inherit;">Talisay City, Negros Occidental, Philippines</span>
+              </div>
+            </div>
+
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 9. TRASH WINDOW -->
+    <section id="window-trash" class="xp-window" style="width: 580px; min-height: 360px; display: none;"
+      aria-label="Trash Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-trash.svg" alt="" aria-hidden="true">
+          <span>Trash - Files</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body"
+        style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 40px 20px;">
+        <img src="images/icons/ubuntu-trash.svg" alt="Empty Trash"
+          style="width: 72px; height: 72px; opacity: 0.75; margin-bottom: 16px;">
+        <h3 style="font-size: 16px; font-weight: 700; color: inherit; margin-bottom: 6px;">Trash is Empty</h3>
+        <p style="font-size: 13px; color: #888888; max-width: 320px;">Deleted files and obsolete items are securely emptied from the repository.</p>
+      </div>
+    </section>
+
+    <!-- 10. MINESWEEPER (GNOME MINES) WINDOW -->
+    <section id="window-mines" class="xp-window" style="width: 380px; min-height: 480px; display: none;" aria-label="Minesweeper Game Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-mines.svg" alt="" aria-hidden="true">
+          <span>Mines - GNOME Games</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize" aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize" aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 16px;">
+        <div class="mines-wrapper">
+          <div class="mines-options-row">
+            <label style="font-size: 12px; font-weight: 500;">Difficulty:</label>
+            <select id="mines-difficulty-select" class="mines-select" aria-label="Select Game Difficulty">
+              <option value="easy" selected>Easy (9x9, 10 Mines)</option>
+              <option value="medium">Medium (16x16, 40 Mines)</option>
+              <option value="expert">Expert (16x30, 99 Mines)</option>
+            </select>
+          </div>
+
+          <div class="mines-toolbar">
+            <div id="mines-counter-display" class="mines-lcd-display" title="Mines Remaining">010</div>
+            <button id="mines-face-btn" class="mines-face-btn" type="button" title="New Game">🙂</button>
+            <div id="mines-timer-display" class="mines-lcd-display" title="Elapsed Time">000</div>
+          </div>
+
+          <div class="mines-board-container">
+            <div id="mines-board-grid" class="mines-board-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. TETRIS BATTLE (1v1 vs AI) WINDOW -->
+    <section id="window-tetris" class="xp-window" style="width: 880px; min-height: 620px; display: none;" aria-label="Tetris Battle Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-tetris.svg" alt="" aria-hidden="true">
+          <span>Tetris Battle - Janrick vs Tux AI</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize" aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize" aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 12px; background: #14161d;">
+        
+        <!-- Top Battle HUD Bar (Matching Screenshot) -->
+        <div class="t-battle-top-bar">
+          <!-- Left: Player 1 (Janrick Alo) -->
+          <div class="t-player-badge t-player-left">
+            <img class="t-player-avatar" src="images/prof.jpg" alt="Janrick Alo">
+            <div class="t-player-details">
+              <span class="t-player-rank">WEB DEVELOPER</span>
+              <span class="t-player-name">JANRICK</span>
+              <span class="t-player-streak">WIN STREAK: <strong id="tetris-p1-streak">0</strong></span>
+            </div>
+            <div class="t-ko-badge" title="Player KOs">
+              <span class="t-ko-label">KO</span>
+              <span id="tetris-p1-ko" class="t-ko-val">0</span>
+            </div>
+          </div>
+
+          <!-- Center: Match Countdown Timer & Options -->
+          <div class="t-center-hud">
+            <div class="t-timer-box">
+              <span class="t-timer-label">TIME</span>
+              <span id="tetris-timer" class="t-timer-clock">02:00</span>
+            </div>
+            <div class="t-difficulty-select-wrapper">
+              <select id="tetris-difficulty-select" class="t-diff-select" aria-label="AI Difficulty">
+                <option value="easy">AI: Casual</option>
+                <option value="medium" selected>AI: Normal</option>
+                <option value="hard">AI: Expert</option>
+                <option value="beast">AI: Beast</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Right: Player 2 (Tux AI) -->
+          <div class="t-player-badge t-player-right">
+            <div class="t-ko-badge" title="AI KOs">
+              <span class="t-ko-label">KO</span>
+              <span id="tetris-ai-ko" class="t-ko-val">0</span>
+            </div>
+            <div class="t-player-details" style="text-align: right;">
+              <span class="t-player-rank">UBUNTU BOT</span>
+              <span class="t-player-name">TUX AI</span>
+              <span class="t-player-streak">WIN STREAK: <strong id="tetris-ai-streak">0</strong></span>
+            </div>
+            <img class="t-player-avatar" src="images/icons/ubuntu-logo.svg" alt="Tux AI">
+          </div>
+        </div>
+
+        <!-- Main 1v1 Battle Arena -->
+        <div class="t-battle-arena">
+          
+          <!-- LEFT SIDE: PLAYER 1 BOARD -->
+          <div class="t-player-zone">
+            <!-- P1 Hold -->
+            <div class="t-side-box t-hold-box">
+              <div class="t-box-title">HOLD</div>
+              <canvas id="tetris-p1-hold-canvas" width="60" height="60"></canvas>
+              <span class="t-key-hint">[C]</span>
+            </div>
+
+            <!-- P1 Board Wrapper -->
+            <div class="t-board-frame">
+              <canvas id="tetris-p1-canvas" width="200" height="400"></canvas>
+              <!-- Garbage Meter Bar -->
+              <div id="tetris-p1-garbage-bar" class="t-garbage-bar" title="Incoming Garbage"></div>
+              <!-- Combo Multiplier Popup -->
+              <div id="tetris-p1-combo" class="t-combo-popup" aria-hidden="true"></div>
+              
+              <!-- Start / Pause / Victory Overlay -->
+              <div id="tetris-overlay" class="tetris-overlay">
+                <h3 id="tetris-overlay-title">TETRIS BATTLE</h3>
+                <p id="tetris-overlay-msg">1v1 Real-Time Battle vs Tux AI<br><span style="font-size: 11px; opacity: 0.85;">Clear lines & build Combos to send massive garbage attacks!</span></p>
+                <button id="tetris-overlay-start-btn" class="tetris-overlay-btn" type="button">⚔️ START BATTLE</button>
+              </div>
+            </div>
+
+            <!-- P1 Next Queue -->
+            <div class="t-side-box t-next-box">
+              <div class="t-box-title">NEXT</div>
+              <canvas id="tetris-p1-next-canvas" width="60" height="180"></canvas>
+            </div>
+          </div>
+
+          <!-- CENTER: BATTLE ARENA HUB -->
+          <div class="t-center-mascots">
+            <!-- Floating Attack Notification -->
+            <div id="t-attack-anim" class="t-attack-pill">⚔️ ATTACK!</div>
+
+            <!-- Glassmorphic Arena Card -->
+            <div class="t-arena-card">
+              <!-- Mascot Duel -->
+              <div class="t-mascot-duel">
+                <div class="t-mascot-wrapper">
+                  <div class="t-mascot-ring t-ring-orange">
+                    <div id="t-mascot-p1" class="t-mascot t-mascot-orange">😄</div>
+                  </div>
+                  <span class="t-mascot-label">YOU</span>
+                  <div id="t-p1-combo-counter" class="t-combo-counter">—</div>
+                </div>
+
+                <div class="t-vs-badge">
+                  <span class="t-vs-text">VS</span>
+                  <div class="t-vs-spark"></div>
+                </div>
+
+                <div class="t-mascot-wrapper">
+                  <div class="t-mascot-ring t-ring-blue">
+                    <div id="t-mascot-ai" class="t-mascot t-mascot-blue">🤖</div>
+                  </div>
+                  <span class="t-mascot-label">TUX</span>
+                  <div id="t-ai-combo-counter" class="t-combo-counter">—</div>
+                </div>
+              </div>
+
+              <!-- Live Battle Status -->
+              <div id="t-battle-status" class="t-battle-status">
+                <span>⚔️ READY TO FIGHT</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="t-match-actions">
+              <button id="tetris-start-btn" class="t-btn-match t-btn-start" type="button">
+                <span class="t-btn-icon">⚔️</span> Start Battle
+              </button>
+              <button id="tetris-pause-btn" class="t-btn-match t-btn-pause" type="button">
+                <span class="t-btn-icon">⏸</span> Pause
+              </button>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE: AI BOT BOARD -->
+          <div class="t-player-zone t-ai-zone">
+            <!-- AI Hold -->
+            <div class="t-side-box t-hold-box">
+              <div class="t-box-title">HOLD</div>
+              <canvas id="tetris-ai-hold-canvas" width="60" height="60"></canvas>
+            </div>
+
+            <!-- AI Board Wrapper -->
+            <div class="t-board-frame">
+              <canvas id="tetris-ai-canvas" width="200" height="400"></canvas>
+              <!-- AI Garbage Meter Bar -->
+              <div id="tetris-ai-garbage-bar" class="t-garbage-bar" title="Incoming Garbage"></div>
+              <!-- AI Combo Multiplier Popup -->
+              <div id="tetris-ai-combo" class="t-combo-popup" aria-hidden="true"></div>
+            </div>
+
+            <!-- AI Next Queue -->
+            <div class="t-side-box t-next-box">
+              <div class="t-box-title">NEXT</div>
+              <canvas id="tetris-ai-next-canvas" width="60" height="180"></canvas>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. UBUNTU LIVE PROFILE WIDGET (Desktop Status Card)
+         ======================================================================= -->
+    <aside id="messenger-panel" class="messenger-panel" aria-label="Ubuntu Profile Status Card">
+      <header class="messenger-header">
+        <div class="messenger-title-group">
+          <img class="messenger-icon" src="images/icons/ubuntu-logo.svg" alt="" aria-hidden="true">
+          <span>Profile</span>
+        </div>
+      </header>
+      <div class="messenger-body">
+        <div class="messenger-profile">
+          <div class="messenger-avatar-wrapper">
+            <img class="messenger-avatar" src="images/prof.jpg" alt="Janrick Alo">
+            <span class="messenger-avatar-status-badge" aria-label="Online"></span>
+          </div>
+          <div class="messenger-info">
+            <a class="messenger-name" href="#"
+              onclick="if(window.WindowManager){window.WindowManager.open('about');}return false;">Janrick Alo</a>
+            <div class="messenger-status-song">
+              <span>🎵 Web Developer</span>
+            </div>
+            <div class="messenger-detail-line">
+              <span>✉️ <a href="mailto:janrickqt@gmail.com">janrickqt@gmail.com</a></span>
+            </div>
+            <div class="messenger-detail-line">
+              <span>📍 Talisay City, Negros Occidental, Philippines</span>
+            </div>
+            <div class="messenger-detail-line">
+              <span>📱 <a href="https://wa.me/639928685257" target="_blank" rel="noopener noreferrer">+63 992 868 5257</a></span>
+            </div>
+            <div class="messenger-links-row">
+              <a class="messenger-link-simple" href="https://github.com/Kanexzz" target="_blank" rel="noopener noreferrer">
+                <span>💽</span> GitHub
+              </a>
+              <a class="messenger-link-simple" href="https://www.linkedin.com/in/janrick-alo-3794bb356/" target="_blank" rel="noopener noreferrer">
+                <span>🌐</span> LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="messenger-status-footer">
+          <span class="status-dot-green"></span>
+          <span class="status-text-online">Online</span>
+          <span class="status-text-separator">—</span>
+          <span class="status-text-msg">Open for freelance & opportunities</span>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- =========================================================================
+       6. UBUNTU CALENDAR & NOTIFICATION CENTER POPOVER
+       ========================================================================= -->
+  <aside id="calendar-popover" aria-label="Calendar and Notifications Center">
+    <div class="calendar-left-section">
+      <div class="cal-section-title">Notifications</div>
+      <div class="cal-notif-item">
+        <div class="cal-notif-title">Portfolio Ready</div>
+        <div class="cal-notif-text">Welcome to Janrick Alo's interactive Ubuntu Portfolio!</div>
+      </div>
+      <div class="cal-notif-item">
+        <div class="cal-notif-title">System Status</div>
+        <div class="cal-notif-text">All projects and services operational.</div>
+      </div>
+    </div>
+    <div class="calendar-right-section">
+      <div id="cal-today-header" class="cal-today-header">Friday, August 28, 2026</div>
+      <div class="cal-month-title">August 2026</div>
+      <div class="cal-grid">
+        <div class="cal-day-header">Su</div>
+        <div class="cal-day-header">Mo</div>
+        <div class="cal-day-header">Tu</div>
+        <div class="cal-day-header">We</div>
+        <div class="cal-day-header">Th</div>
+        <div class="cal-day-header">Fr</div>
+        <div class="cal-day-header">Sa</div>
+
+        <div class="cal-day other-month">26</div>
+        <div class="cal-day other-month">27</div>
+        <div class="cal-day other-month">28</div>
+        <div class="cal-day other-month">29</div>
+        <div class="cal-day other-month">30</div>
+        <div class="cal-day other-month">31</div>
+        <div class="cal-day">1</div>
+        <div class="cal-day">2</div>
+        <div class="cal-day">3</div>
+        <div class="cal-day">4</div>
+        <div class="cal-day">5</div>
+        <div class="cal-day">6</div>
+        <div class="cal-day">7</div>
+        <div class="cal-day">8</div>
+        <div class="cal-day">9</div>
+        <div class="cal-day">10</div>
+        <div class="cal-day">11</div>
+        <div class="cal-day">12</div>
+        <div class="cal-day">13</div>
+        <div class="cal-day">14</div>
+        <div class="cal-day">15</div>
+        <div class="cal-day">16</div>
+        <div class="cal-day">17</div>
+        <div class="cal-day">18</div>
+        <div class="cal-day">19</div>
+        <div class="cal-day">20</div>
+        <div class="cal-day">21</div>
+        <div class="cal-day">22</div>
+        <div class="cal-day">23</div>
+        <div class="cal-day">24</div>
+        <div class="cal-day">25</div>
+        <div class="cal-day">26</div>
+        <div class="cal-day">27</div>
+        <div class="cal-day today">28</div>
+        <div class="cal-day">29</div>
+        <div class="cal-day">30</div>
+        <div class="cal-day">31</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       7. UBUNTU QUICK SETTINGS POPOVER
+       ========================================================================= -->
+  <aside id="quick-settings-popover" aria-label="System Quick Settings">
+    <div class="settings-slider-row">
+      <span id="quick-volume-icon" class="settings-slider-icon">🔊</span>
+      <input id="quick-volume-slider" class="settings-slider" type="range" min="0" max="100" value="80"
+        aria-label="Volume Slider">
+    </div>
+
+    <div class="settings-grid-toggles">
+      <button id="quick-toggle-wifi" class="setting-toggle-btn active" type="button">
+        <span class="setting-toggle-icon">📶</span> Wi-Fi
+      </button>
+      <button id="quick-toggle-perf" class="setting-toggle-btn active" type="button">
+        <span class="setting-toggle-icon">⚡</span> High Performance
+      </button>
+      <button id="quick-toggle-dark" class="setting-toggle-btn active" type="button">
+        <span class="setting-toggle-icon">🌙</span> Dark Mode
+      </button>
+      <button id="quick-toggle-lock" class="setting-toggle-btn" type="button">
+        <span class="setting-toggle-icon">🔒</span> Lock Screen
+      </button>
+    </div>
+
+    <div class="settings-footer-row">
+      <button id="quick-power-btn" class="settings-icon-btn" type="button" title="Power Off / Restart"
+        aria-label="Power Options">⏻</button>
+    </div>
+  </aside>
+
+  <!-- =========================================================================
+       Ubuntu Toast Notification
+       ========================================================================= -->
+  <div id="ubuntu-toast" role="status" aria-live="polite">
+    <span id="toast-icon">✨</span>
+    <span id="toast-text">Notification</span>
+  </div>
+
+  <!-- =========================================================================
+       Ubuntu Lock Screen Overlay
+       ========================================================================= -->
+  <div id="ubuntu-lock-screen" aria-label="Ubuntu Lock Screen">
+    <div class="lock-time-box">
+      <div id="lock-time" class="lock-time">08:08</div>
+      <div id="lock-date" class="lock-date">Friday, August 28</div>
+    </div>
+    <div class="lock-user-card">
+      <img class="lock-user-avatar" src="images/prof.jpg" alt="Janrick Alo">
+      <div class="lock-user-name">Janrick Alo</div>
+      <form id="lock-form" class="lock-password-form" onsubmit="event.preventDefault(); window.unlockScreen();">
+        <input id="lock-password-input" class="lock-password-input" type="password" placeholder="Press Enter to unlock"
+          autocomplete="off">
+        <button class="lock-unlock-btn" type="submit">Unlock</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Ubuntu Power Off Modal & Shutdown Screen
+       ========================================================================= -->
+  <div id="ubuntu-power-modal" aria-label="Power Off System Dialog">
+    <div class="power-modal-card">
+      <div class="power-modal-icon">⏻</div>
+      <h3 class="power-modal-title">Power Off</h3>
+      <p class="power-modal-desc">Are you sure you want to power off or restart?</p>
+      <div class="power-modal-buttons">
+        <button id="power-cancel-btn" class="power-btn-action power-btn-cancel" type="button">Cancel</button>
+        <button id="power-restart-btn" class="power-btn-action power-btn-restart" type="button">Restart</button>
+        <button id="power-off-btn" class="power-btn-action power-btn-off" type="button">Power Off</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="ubuntu-shutdown-screen" aria-label="Ubuntu Shutdown Screen">
+    <img class="shutdown-logo" src="images/icons/ubuntu-logo.svg" alt="Ubuntu Logo">
+    <p style="font-size: 16px; font-weight: 500; margin-bottom: 8px;">System is powered off</p>
+    <button id="power-on-btn" class="shutdown-btn" type="button">Power On</button>
+  </div>
+
+  <!-- =========================================================================
+       8. GNOME APP GRID OVERVIEW (Matching Screenshot)
+       ========================================================================= -->
+  <div id="app-grid-overlay" aria-label="Applications Overview">
+    <!-- Top Search Bar -->
+    <div class="app-grid-search-wrapper">
+      <span class="app-grid-search-icon">🔍</span>
+      <input id="app-grid-search" class="app-grid-search" type="text" placeholder="Type to search..."
+        autocomplete="off">
+    </div>
+
+    <!-- Application Icons Grid -->
+    <div id="app-grid-items" class="app-grid-items">
+
+      <!-- 1. Files / About Me -->
+      <button class="app-grid-item" data-window="about" data-frequent="true" type="button" aria-label="About Me">
+        <img class="app-grid-icon" src="images/icons/ubuntu-files.svg" alt="">
+        <span class="app-grid-label">About Me</span>
+      </button>
+
+      <!-- 2. Terminal / Projects -->
+      <button class="app-grid-item" data-window="projects" data-frequent="true" type="button" aria-label="Projects">
+        <img class="app-grid-icon" src="images/icons/ubuntu-terminal.svg" alt="">
+        <span class="app-grid-label">Projects</span>
+      </button>
+
+      <!-- 3. Software Center / Education -->
+      <button class="app-grid-item" data-window="education" type="button" aria-label="Education">
+        <img class="app-grid-icon" src="images/icons/ubuntu-software.svg" alt="">
+        <span class="app-grid-label">Education</span>
+      </button>
+
+      <!-- 5. Settings / Skills -->
+      <button class="app-grid-item" data-window="skills" data-frequent="true" type="button" aria-label="Skills">
+        <img class="app-grid-icon" src="images/icons/ubuntu-settings.svg" alt="">
+        <span class="app-grid-label">Skills</span>
+      </button>
+
+      <!-- 6. Contacts / References -->
+      <button class="app-grid-item" data-window="references" type="button" aria-label="References">
+        <img class="app-grid-icon" src="images/icons/ubuntu-contacts.svg" alt="">
+        <span class="app-grid-label">References</span>
+      </button>
+
+      <!-- 7. Mail / Contact -->
+      <button class="app-grid-item" data-window="contact" data-frequent="true" type="button" aria-label="Contact">
+        <img class="app-grid-icon" src="images/icons/ubuntu-mail.svg" alt="">
+        <span class="app-grid-label">Contact</span>
+      </button>
+
+      <!-- 9. Mines / Minesweeper (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="mines" type="button" aria-label="Mines">
+        <img class="app-grid-icon" src="images/icons/ubuntu-mines.svg" alt="">
+        <span class="app-grid-label">Mines</span>
+      </button>
+
+      <!-- 10. Tetris / Blocks (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="tetris" type="button" aria-label="Tetris">
+        <img class="app-grid-icon" src="images/icons/ubuntu-tetris.svg" alt="">
+        <span class="app-grid-label">Tetris</span>
+      </button>
+
+    </div>
+
+    <!-- Bottom View Switcher (Frequent / All) matching 2nd image -->
+    <div class="app-grid-bottom-bar">
+      <div class="app-grid-switcher" role="tablist" aria-label="App Filter Switcher">
+        <button id="app-filter-frequent" class="app-switcher-btn active" role="tab" aria-selected="true"
+          type="button">Frequent</button>
+        <button id="app-filter-all" class="app-switcher-btn" role="tab" aria-selected="false" type="button">All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       JavaScript Modules
+       ========================================================================= -->
+  <script src="js/windows.js"></script>
+  <script src="js/desktop.js"></script>
+  <script src="js/taskbar.js"></script>
+  <script src="js/minesweeper.js"></script>
+  <script src="js/tetris.js"></script>
+  <script src="js/mobile.js"></script>
+</body>
+
+</html>
