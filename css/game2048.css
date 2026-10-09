@@ -1,0 +1,365 @@
+/* ==========================================================================
+   2048 GAME STYLES (game2048.css)
+   Authentic sliding tile puzzle with responsive grid & sleek Dark Ubuntu theme
+   ========================================================================== */
+
+.g2048-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Header with Title & Score Badges */
+.g2048-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.g2048-title-group h2 {
+  margin: 0;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: #f59e0b;
+  line-height: 1;
+}
+
+.g2048-subtitle {
+  font-size: 12px;
+  color: #94a3b8;
+  margin: 2px 0 0 0;
+}
+
+.g2048-scores-row {
+  display: flex;
+  gap: 8px;
+}
+
+.g2048-score-box {
+  background: rgba(30, 41, 59, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: 6px 12px;
+  text-align: center;
+  min-width: 60px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.g2048-score-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.g2048-score-val {
+  display: block;
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Toolbar Buttons */
+.g2048-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.g2048-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.g2048-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-1px);
+}
+
+.g2048-btn:active {
+  transform: translateY(1px);
+}
+
+.g2048-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.g2048-btn-primary {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 3px 10px rgba(245, 158, 11, 0.35);
+}
+
+.g2048-btn-primary:hover {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+}
+
+/* 4x4 Grid Board Frame */
+.g2048-board-frame {
+  position: relative;
+  background: #181d28;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.5), 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.g2048-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.g2048-cell {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Tile Components */
+.g2048-tile {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 28px;
+  font-weight: 800;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  animation: g2048Pop 0.18s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes g2048Pop {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Classic Authentic Tile Colors */
+.g2048-val-2 {
+  background: #eee4da;
+  color: #776e65;
+}
+
+.g2048-val-4 {
+  background: #ede0c8;
+  color: #776e65;
+}
+
+.g2048-val-8 {
+  background: #f2b179;
+  color: #f9f6f2;
+}
+
+.g2048-val-16 {
+  background: #f59563;
+  color: #f9f6f2;
+}
+
+.g2048-val-32 {
+  background: #f67c5f;
+  color: #f9f6f2;
+}
+
+.g2048-val-64 {
+  background: #f65e3b;
+  color: #f9f6f2;
+}
+
+.g2048-val-128 {
+  background: #edcf72;
+  color: #f9f6f2;
+  font-size: 24px;
+  box-shadow: 0 0 12px rgba(237, 207, 114, 0.55);
+}
+
+.g2048-val-256 {
+  background: #edcc61;
+  color: #f9f6f2;
+  font-size: 24px;
+  box-shadow: 0 0 16px rgba(237, 204, 97, 0.65);
+}
+
+.g2048-val-512 {
+  background: #edc850;
+  color: #f9f6f2;
+  font-size: 24px;
+  box-shadow: 0 0 20px rgba(237, 200, 80, 0.75);
+}
+
+.g2048-val-1024 {
+  background: #edc53f;
+  color: #f9f6f2;
+  font-size: 20px;
+  box-shadow: 0 0 24px rgba(237, 197, 63, 0.85);
+}
+
+.g2048-val-2048 {
+  background: #edc22e;
+  color: #ffffff;
+  font-size: 20px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 30px rgba(237, 194, 46, 0.95);
+  animation: g2048Glow 1.5s infinite alternate;
+}
+
+@keyframes g2048Glow {
+  0% { box-shadow: 0 0 15px rgba(237, 194, 46, 0.6); }
+  100% { box-shadow: 0 0 32px rgba(237, 194, 46, 1); }
+}
+
+.g2048-val-super {
+  background: #3c3a32;
+  color: #ffd700;
+  font-size: 18px;
+  border: 2px solid #ffd700;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+}
+
+/* Modal Overlay (Game Over / 2048 Win) */
+.g2048-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 12px;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  z-index: 20;
+  animation: g2048FadeIn 0.25s ease-out;
+}
+
+.g2048-overlay.active {
+  display: flex;
+}
+
+@keyframes g2048FadeIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.g2048-overlay h3 {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.g2048-overlay p {
+  margin: 6px 0 16px 0;
+  font-size: 13px;
+  color: #94a3b8;
+  max-width: 240px;
+}
+
+.g2048-overlay-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* On-Screen D-Pad Controller for Mobile & Quick Taps */
+.g2048-dpad {
+  display: grid;
+  grid-template-columns: repeat(3, 46px);
+  grid-template-rows: repeat(2, 40px);
+  gap: 6px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.g2048-dpad-btn {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.g2048-dpad-btn:active {
+  background: rgba(245, 158, 11, 0.4);
+  transform: scale(0.92);
+}
+
+.g2048-dpad-up {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.g2048-dpad-left {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.g2048-dpad-down {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.g2048-dpad-right {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.g2048-instructions {
+  font-size: 11.5px;
+  color: #64748b;
+  text-align: center;
+  margin: 0;
+}

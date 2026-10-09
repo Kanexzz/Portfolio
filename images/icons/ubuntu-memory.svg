@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <defs>
+    <linearGradient id="memory-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="100%" stop-color="#8b5cf6"/>
+    </linearGradient>
+    <filter id="memory-shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <g filter="url(#memory-shadow)">
+    <rect x="3" y="3" width="42" height="42" rx="10" ry="10" fill="url(#memory-bg)"/>
+    <rect x="4" y="4" width="40" height="40" rx="9" ry="9" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.35"/>
+    <rect x="11" y="13" width="12" height="17" rx="2.5" fill="#ffffff" fill-opacity="0.35" transform="rotate(-10 17 21.5)"/>
+    <rect x="23" y="16" width="13" height="18" rx="2.5" fill="#ffffff"/>
+    <text x="29.5" y="29.5" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, sans-serif" font-size="11" font-weight="900" fill="#be185d" text-anchor="middle">?</text>
+  </g>
+</svg>

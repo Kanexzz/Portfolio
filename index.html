@@ -12,6 +12,8 @@
   <link rel="stylesheet" href="css/windows.css">
   <link rel="stylesheet" href="css/taskbar.css">
   <link rel="stylesheet" href="css/mobile-ios.css">
+  <link rel="stylesheet" href="css/game2048.css">
+  <link rel="stylesheet" href="css/arcade.css">
 </head>
 
 <body>
@@ -102,11 +104,11 @@
          IOS MOBILE SPRINGBOARD HOME SCREEN (Matches User Reference Image)
          ======================================================================= -->
     <div id="ios-mobile-screen" class="ios-mobile-screen" aria-label="Mobile Home Screen">
-      
+
       <!-- 1. Top Status Bar & iPhone Island / Notch (Matches User Image) -->
       <div class="ios-status-bar">
         <span id="ios-live-time" class="ios-status-time">9:41</span>
-        
+
         <!-- iPhone Island / Notch -->
         <div class="ios-dynamic-island" onclick="if(window.WindowManager){window.WindowManager.open('about');}">
           <div class="ios-island-mic"></div>
@@ -120,10 +122,10 @@
           </div>
           <!-- Authentic Apple iOS WiFi Icon (3 Arcs + Center Dot) -->
           <svg class="ios-wifi-icon" viewBox="0 0 24 24" width="16" height="16" fill="none">
-            <circle cx="12" cy="18.5" r="1.6" fill="#ffffff"/>
-            <path d="M7.8 14.2C10.1 12 13.9 12 16.2 14.2" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M4.5 10.5C8.6 6.8 15.4 6.8 19.5 10.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-            <path d="M1.5 6.8C7.3 1.8 16.7 1.8 22.5 6.8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
+            <circle cx="12" cy="18.5" r="1.6" fill="#ffffff" />
+            <path d="M7.8 14.2C10.1 12 13.9 12 16.2 14.2" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M4.5 10.5C8.6 6.8 15.4 6.8 19.5 10.5" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
+            <path d="M1.5 6.8C7.3 1.8 16.7 1.8 22.5 6.8" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" />
           </svg>
           <!-- Battery Pill -->
           <div class="ios-battery-pill">
@@ -143,12 +145,15 @@
         <!-- Spotlight Search Bar -->
         <div class="ios-search-container">
           <div class="ios-search-bar">
-            <svg class="ios-search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+            <svg class="ios-search-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+              stroke-width="2.5">
               <circle cx="11" cy="11" r="8"></circle>
               <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
             </svg>
-            <input type="text" id="ios-search-input" class="ios-search-input" placeholder="Search portfolio..." autocomplete="off">
-            <button id="ios-search-clear" class="ios-search-clear" type="button" aria-label="Clear Search" style="display:none;">✕</button>
+            <input type="text" id="ios-search-input" class="ios-search-input" placeholder="Search portfolio..."
+              autocomplete="off">
+            <button id="ios-search-clear" class="ios-search-clear" type="button" aria-label="Clear Search"
+              style="display:none;">✕</button>
           </div>
         </div>
       </div>
@@ -156,19 +161,20 @@
       <!-- 2. Main SpringBoard Multi-Page Viewport & Slider -->
       <div id="ios-pages-viewport" class="ios-pages-viewport">
         <div id="ios-pages-track" class="ios-pages-track">
-          
+
           <!-- ================= PAGE 1: Core Apps ================= -->
           <div class="ios-page" data-page="0">
             <div class="ios-page-content">
-              
+
               <!-- Page 1 4-Column App Grid -->
               <div class="ios-app-grid" role="list">
-                
+
                 <!-- 1. Projects -->
                 <button class="ios-app-item" data-window="projects" data-title="Projects" type="button">
                   <div class="ios-app-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">
                     <svg viewBox="0 0 24 24" fill="#ffffff">
-                      <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+                      <path
+                        d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
                     </svg>
                   </div>
                   <span class="ios-app-label">Projects</span>
@@ -178,7 +184,8 @@
                 <button class="ios-app-item" data-window="about" data-title="About Me" type="button">
                   <div class="ios-app-icon" style="background: linear-gradient(135deg, #38bdf8, #0284c7);">
                     <svg viewBox="0 0 24 24" fill="#ffffff">
-                      <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                      <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                     </svg>
                   </div>
                   <span class="ios-app-label">About Me</span>
@@ -187,9 +194,10 @@
                 <!-- 3. Education -->
                 <button class="ios-app-item" data-window="education" data-title="Education" type="button">
                   <div class="ios-app-icon" style="background: linear-gradient(135deg, #6366f1, #4f46e5);">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-                      <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                      <path d="M6 12v5c3 3 9 3 12 0v-5" />
                     </svg>
                   </div>
                   <span class="ios-app-label">Education</span>
@@ -198,9 +206,11 @@
                 <!-- 4. Skills -->
                 <button class="ios-app-item" data-window="skills" data-title="Skills" type="button">
                   <div class="ios-app-icon" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="3"/>
-                      <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="3" />
+                      <path
+                        d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z" />
                     </svg>
                   </div>
                   <span class="ios-app-label">Skills</span>
@@ -213,14 +223,15 @@
           <!-- ================= PAGE 2: Portfolio Utilities & Direct Contact ================= -->
           <div class="ios-page" data-page="1">
             <div class="ios-page-content">
-              
+
               <!-- Page 2 4-Column App Grid -->
               <div class="ios-app-grid" role="list" style="margin-top: 12px;">
-                
+
                 <!-- 1. References -->
                 <button class="ios-app-item" data-window="references" data-title="References" type="button">
                   <div class="ios-app-icon" style="background: linear-gradient(135deg, #06b6d4, #0891b2);">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
                       <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
                       <circle cx="9" cy="7" r="4"></circle>
                       <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
@@ -234,7 +245,8 @@
                 <button class="ios-app-item" data-window="contact" data-title="Contact" type="button">
                   <div class="ios-app-icon" style="background: linear-gradient(135deg, #a855f7, #9333ea);">
                     <svg viewBox="0 0 24 24" fill="#ffffff">
-                      <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                      <path
+                        d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
                     </svg>
                   </div>
                   <span class="ios-app-label">Contact</span>
@@ -247,22 +259,112 @@
           <!-- ================= PAGE 3: Games ================= -->
           <div class="ios-page" data-page="2">
             <div class="ios-page-content">
-              
+
               <!-- Page 3 4-Column App Grid -->
               <div class="ios-app-grid" role="list" style="margin-top: 12px;">
-                
+
                 <!-- 1. Minesweeper -->
                 <button class="ios-app-item" data-window="mines" data-title="Minesweeper" type="button">
                   <div class="ios-app-icon" style="background: linear-gradient(135deg, #e11d48, #be123c);">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                      <circle cx="12" cy="12" r="7"/>
-                      <line x1="12" y1="1" x2="12" y2="5"/>
-                      <line x1="12" y1="19" x2="12" y2="23"/>
-                      <line x1="1" y1="12" x2="5" y2="12"/>
-                      <line x1="19" y1="12" x2="23" y2="12"/>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="7" />
+                      <line x1="12" y1="1" x2="12" y2="5" />
+                      <line x1="12" y1="19" x2="12" y2="23" />
+                      <line x1="1" y1="12" x2="5" y2="12" />
+                      <line x1="19" y1="12" x2="23" y2="12" />
                     </svg>
                   </div>
                   <span class="ios-app-label">Mines</span>
+                </button>
+
+                <!-- 2. 2048 Puzzle -->
+                <button class="ios-app-item" data-window="2048" data-title="2048" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+                    <svg viewBox="0 0 24 24" width="24" height="24" fill="#ffffff">
+                      <rect x="2.5" y="2.5" width="19" height="19" rx="4.5" fill="none" stroke="#ffffff"
+                        stroke-width="1.2" stroke-opacity="0.4" />
+                      <text x="12" y="15.8"
+                        font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="7.5"
+                        font-weight="900" letter-spacing="-0.4" text-anchor="middle" fill="#ffffff">2048</text>
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">2048</span>
+                </button>
+
+                <!-- 3. Snake -->
+                <button class="ios-app-item" data-window="snake" data-title="Snake" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #22c55e, #15803d);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.4" stroke-linecap="round"
+                      stroke-linejoin="round">
+                      <path d="M4 16h9a2.5 2.5 0 0 0 0-5H10a2.5 2.5 0 0 1 0-5h8" />
+                      <circle cx="18.5" cy="16" r="1.6" fill="#f43f5e" stroke="none" />
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Snake</span>
+                </button>
+
+                <!-- 4. Tic-Tac-Toe -->
+                <button class="ios-app-item" data-window="tictactoe" data-title="Tic-Tac-Toe" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round">
+                      <path d="M9 3v18M15 3v18M3 9h18M3 15h18" stroke-opacity="0.6" />
+                      <path d="M4.5 4.5l3 3M7.5 4.5l-3 3" />
+                      <circle cx="12" cy="12" r="1.6" />
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Tic-Tac-Toe</span>
+                </button>
+
+                <!-- 5. Memory Match -->
+                <button class="ios-app-item" data-window="memory" data-title="Memory Match" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #ec4899, #8b5cf6);">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linejoin="round">
+                      <rect x="3" y="5" width="8" height="12" rx="1.5" transform="rotate(-8 7 11)" stroke-opacity="0.6" />
+                      <rect x="12" y="7" width="9" height="13" rx="1.5" fill="#ffffff" fill-opacity="0.25" />
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Memory</span>
+                </button>
+
+                <!-- 6. Flappy Penguin -->
+                <button class="ios-app-item" data-window="flappy" data-title="Flappy Penguin" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #3b82f6, #7c3aed);">
+                    <svg viewBox="0 0 24 24" fill="none">
+                      <rect x="17" y="1" width="4" height="7" fill="#4ade80" />
+                      <rect x="17" y="16" width="4" height="7" fill="#4ade80" />
+                      <ellipse cx="10" cy="12" rx="5" ry="4.5" fill="#0f172a" />
+                      <ellipse cx="10.6" cy="13" rx="3" ry="2.5" fill="#f8fafc" />
+                      <path d="M14.5 11.2l2.4 1-2.4 1z" fill="#f59e0b" />
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Flappy</span>
+                </button>
+
+                <!-- 7. Hearts -->
+                <button class="ios-app-item" data-window="hearts" data-title="Hearts" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #ef4444, #b91c1c);">
+                    <svg viewBox="0 0 24 24" fill="#ffffff">
+                      <path d="M12 20.5C5 15.5 3 11.6 3 8.6 3 6 5 4 7.5 4c1.8 0 3.4 1 4.5 2.6C13.1 5 14.7 4 16.5 4 19 4 21 6 21 8.6c0 3-2 6.9-9 11.9z" />
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Hearts</span>
+                </button>
+
+                <!-- 8. Mancala -->
+                <button class="ios-app-item" data-window="mancala" data-title="Mancala" type="button">
+                  <div class="ios-app-icon" style="background: linear-gradient(135deg, #d97706, #92400e);">
+                    <svg viewBox="0 0 24 24" fill="#fde68a">
+                      <rect x="2" y="6.5" width="20" height="11" rx="5.5" fill="#451a03" fill-opacity="0.5" />
+                      <circle cx="7" cy="10" r="1.6" />
+                      <circle cx="12" cy="10" r="1.6" />
+                      <circle cx="17" cy="10" r="1.6" />
+                      <circle cx="7" cy="14" r="1.6" />
+                      <circle cx="12" cy="14" r="1.6" />
+                      <circle cx="17" cy="14" r="1.6" />
+                    </svg>
+                  </div>
+                  <span class="ios-app-label">Mancala</span>
                 </button>
 
               </div>
@@ -282,12 +384,13 @@
       <!-- 3. Translucent Glass Bottom Dock (Only Contact, About Me, and Projects) -->
       <div class="ios-dock-wrapper">
         <div class="ios-dock">
-          
+
           <!-- 1. Contact -->
           <button class="ios-dock-item" data-window="contact" type="button" aria-label="Contact">
             <div class="ios-app-icon" style="background: linear-gradient(135deg, #a855f7, #9333ea);">
               <svg viewBox="0 0 24 24" fill="#ffffff">
-                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
+                <path
+                  d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
               </svg>
             </div>
             <span class="ios-app-label">Contact</span>
@@ -297,7 +400,8 @@
           <button class="ios-dock-item" data-window="about" type="button" aria-label="About Me">
             <div class="ios-app-icon" style="background: linear-gradient(135deg, #38bdf8, #0284c7);">
               <svg viewBox="0 0 24 24" fill="#ffffff">
-                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                <path
+                  d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
               </svg>
             </div>
             <span class="ios-app-label">About Me</span>
@@ -307,7 +411,7 @@
           <button class="ios-dock-item" data-window="projects" type="button" aria-label="Projects">
             <div class="ios-app-icon" style="background: linear-gradient(135deg, #f97316, #ea580c);">
               <svg viewBox="0 0 24 24" fill="#ffffff">
-                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z"/>
+                <path d="M10 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2h-8l-2-2z" />
               </svg>
             </div>
             <span class="ios-app-label">Projects</span>
@@ -362,7 +466,10 @@
           <article class="about-text-card">
             <h3 class="about-section-heading">About Me</h3>
             <p class="about-description">
-              I am a motivated and aspiring Web Developer with a passion for creating responsive, user-friendly, and functional websites. I enjoy learning new technologies, solving problems through code, and turning ideas into practical digital solutions. My career goal is to grow as a Web Developer while continuously improving my technical skills and creating meaningful web experiences.
+              I am a motivated and aspiring Web Developer with a passion for creating responsive, user-friendly, and
+              functional websites. I enjoy learning new technologies, solving problems through code, and turning ideas
+              into practical digital solutions. My career goal is to grow as a Web Developer while continuously
+              improving my technical skills and creating meaningful web experiences.
             </p>
           </article>
 
@@ -464,12 +571,16 @@
         </div>
       </header>
       <div class="xp-window-body">
-        
+
         <!-- College / University -->
         <article class="xp-content-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
-            <h3 class="xp-card-title" style="margin: 0; font-size: 15.5px;">Bachelor of Science in Information System</h3>
-            <span class="xp-badge" style="background-color: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">2024 - 2027</span>
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
+            <h3 class="xp-card-title" style="margin: 0; font-size: 15.5px;">Bachelor of Science in Information System
+            </h3>
+            <span class="xp-badge"
+              style="background-color: rgba(56, 189, 248, 0.15); border-color: rgba(56, 189, 248, 0.4); color: #38bdf8;">2024
+              - 2027</span>
           </div>
           <p class="xp-card-subtitle" style="margin: 4px 0;">Carlos Hilado Memorial State University</p>
           <p class="xp-card-text" style="font-weight: 600; color: #ffffff; margin-top: 2px;">Bachelor</p>
@@ -477,20 +588,27 @@
 
         <!-- High School -->
         <article class="xp-content-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
             <h3 class="xp-card-title" style="margin: 0; font-size: 15.5px;">Rafael B. Lacson Memorial High School</h3>
-            <span class="xp-badge" style="background-color: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: #fbbf24;">2018 - 2023</span>
+            <span class="xp-badge"
+              style="background-color: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: #fbbf24;">2018
+              - 2023</span>
           </div>
           <p class="xp-card-text" style="margin-top: 4px; font-weight: 600; color: #ffffff;">High School Diploma</p>
         </article>
 
         <!-- Elementary -->
         <article class="xp-content-card">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 4px;">
             <h3 class="xp-card-title" style="margin: 0; font-size: 15.5px;">Talisay Elementary School</h3>
-            <span class="xp-badge" style="background-color: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">2011 - 2017</span>
+            <span class="xp-badge"
+              style="background-color: rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.4); color: #c084fc;">2011
+              - 2017</span>
           </div>
-          <p class="xp-card-text" style="margin-top: 4px; font-weight: 600; color: #ffffff;">Elementary School Diploma</p>
+          <p class="xp-card-text" style="margin-top: 4px; font-weight: 600; color: #ffffff;">Elementary School Diploma
+          </p>
         </article>
 
       </div>
@@ -516,7 +634,8 @@
 
         <!-- 1. Languages -->
         <article class="xp-content-card">
-          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+          <h3 class="xp-card-title"
+            style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
             <span>⚡</span> Languages
           </h3>
           <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
@@ -530,7 +649,8 @@
 
         <!-- 2. Frontend -->
         <article class="xp-content-card">
-          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+          <h3 class="xp-card-title"
+            style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
             <span>🎨</span> Frontend
           </h3>
           <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
@@ -542,7 +662,8 @@
 
         <!-- 3. Backend -->
         <article class="xp-content-card">
-          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+          <h3 class="xp-card-title"
+            style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
             <span>⚙️</span> Backend
           </h3>
           <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
@@ -555,7 +676,8 @@
 
         <!-- 4. Databases -->
         <article class="xp-content-card">
-          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+          <h3 class="xp-card-title"
+            style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
             <span>🗄️</span> Databases
           </h3>
           <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
@@ -567,7 +689,8 @@
 
         <!-- 5. Tools -->
         <article class="xp-content-card">
-          <h3 class="xp-card-title" style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
+          <h3 class="xp-card-title"
+            style="display: flex; align-items: center; gap: 8px; font-size: 15px; margin-bottom: 10px; color: #ffffff;">
             <span>🛠️</span> Tools
           </h3>
           <div class="xp-badge-list" style="margin-top: 6px; gap: 8px;">
@@ -601,81 +724,105 @@
       </header>
       <div class="xp-window-body">
         <article class="xp-content-card" style="border-left: 4px solid var(--ub-orange);">
-          <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 6px; margin-bottom: 6px;">
             <div>
               <h3 class="xp-card-title" style="margin: 0; font-size: 16px; color: #ffffff;">Jason Saldua, MIT</h3>
               <p class="xp-card-subtitle" style="margin: 3px 0 0 0;">Information Technology Professional</p>
             </div>
-            <span class="xp-badge" style="background-color: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #d1d5db;">Senior colleague • March 2025</span>
+            <span class="xp-badge"
+              style="background-color: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #d1d5db;">Senior
+              colleague • March 2025</span>
           </div>
-          <p class="xp-card-text" style="font-style: italic; line-height: 1.7; color: #f1f5f9; margin-top: 12px; font-size: 14px;">
-            "I've had the opportunity to work with Janrick Alo on several projects, and I can confidently recommend him as a dedicated and capable developer. His problem-solving skills, willingness to learn, and ability to create practical solutions make him a valuable member of any team."
+          <p class="xp-card-text"
+            style="font-style: italic; line-height: 1.7; color: #f1f5f9; margin-top: 12px; font-size: 14px;">
+            "I've had the opportunity to work with Janrick Alo on several projects, and I can confidently recommend him
+            as a dedicated and capable developer. His problem-solving skills, willingness to learn, and ability to
+            create practical solutions make him a valuable member of any team."
           </p>
         </article>
       </div>
     </section>
 
     <!-- 7. CONTACT WINDOW -->
-    <section id="window-contact" class="xp-window" style="width: 620px; min-height: 420px; display: none;" aria-label="Contact Window">
+    <section id="window-contact" class="xp-window" style="width: 620px; min-height: 420px; display: none;"
+      aria-label="Contact Window">
       <header class="xp-titlebar">
         <div class="xp-titlebar-title">
           <img class="xp-titlebar-icon" src="images/icons/ubuntu-mail.svg" alt="" aria-hidden="true">
           <span>Contact - Janrick Alo</span>
         </div>
         <div class="xp-titlebar-controls">
-          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize" aria-label="Minimize Window">−</button>
-          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize" aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
           <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
         </div>
       </header>
       <div class="xp-window-body">
-        
+
         <article class="xp-content-card">
           <h3 class="xp-card-title" style="margin-bottom: 14px; font-size: 16px;">Contact Information</h3>
-          
+
           <div class="contact-info-list" style="display: flex; flex-direction: column; gap: 10px;">
-            
+
             <!-- Email -->
-            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="contact-item-row"
+              style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
               <span style="font-size: 20px;">✉️</span>
               <div>
-                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Email</strong>
-                <a href="mailto:janrickqt@gmail.com" style="font-size: 14px; font-weight: 600; color: #38bdf8; text-decoration: none;">janrickqt@gmail.com</a>
+                <strong
+                  style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Email</strong>
+                <a href="mailto:janrickqt@gmail.com"
+                  style="font-size: 14px; font-weight: 600; color: #38bdf8; text-decoration: none;">janrickqt@gmail.com</a>
               </div>
             </div>
 
             <!-- Phone / WhatsApp -->
-            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="contact-item-row"
+              style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
               <span style="font-size: 20px;">📱</span>
               <div>
-                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Phone / WhatsApp</strong>
-                <a href="https://wa.me/639928685257" target="_blank" rel="noopener noreferrer" style="font-size: 14px; font-weight: 600; color: #38bdf8; text-decoration: none;">+63 992 868 5257</a>
+                <strong
+                  style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Phone
+                  / WhatsApp</strong>
+                <a href="https://wa.me/639928685257" target="_blank" rel="noopener noreferrer"
+                  style="font-size: 14px; font-weight: 600; color: #38bdf8; text-decoration: none;">+63 992 868 5257</a>
               </div>
             </div>
 
             <!-- GitHub -->
-            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="contact-item-row"
+              style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
               <span style="font-size: 20px;">💽</span>
               <div>
-                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">GitHub</strong>
-                <a href="https://github.com/Kanexzz" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 500; color: #38bdf8; text-decoration: none;">github.com/Kanexzz</a>
+                <strong
+                  style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">GitHub</strong>
+                <a href="https://github.com/Kanexzz" target="_blank" rel="noopener noreferrer"
+                  style="font-size: 13.5px; font-weight: 500; color: #38bdf8; text-decoration: none;">github.com/Kanexzz</a>
               </div>
             </div>
 
             <!-- LinkedIn -->
-            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="contact-item-row"
+              style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
               <span style="font-size: 20px;">🌐</span>
               <div>
-                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">LinkedIn</strong>
-                <a href="https://www.linkedin.com/in/janrick-alo-3794bb356/" target="_blank" rel="noopener noreferrer" style="font-size: 13.5px; font-weight: 500; color: #38bdf8; text-decoration: none;">linkedin.com/in/janrick-alo-3794bb356</a>
+                <strong
+                  style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">LinkedIn</strong>
+                <a href="https://www.linkedin.com/in/janrick-alo-3794bb356/" target="_blank" rel="noopener noreferrer"
+                  style="font-size: 13.5px; font-weight: 500; color: #38bdf8; text-decoration: none;">linkedin.com/in/janrick-alo-3794bb356</a>
               </div>
             </div>
 
             <!-- Location -->
-            <div class="contact-item-row" style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+            <div class="contact-item-row"
+              style="display: flex; align-items: center; gap: 14px; padding: 12px 16px; background: rgba(255, 255, 255, 0.05); border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
               <span style="font-size: 20px;">📍</span>
               <div>
-                <strong style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Location</strong>
+                <strong
+                  style="display: block; font-size: 11px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 2px;">Location</strong>
                 <span style="font-size: 13.5px; color: inherit;">Talisay City, Negros Occidental, Philippines</span>
               </div>
             </div>
@@ -707,20 +854,24 @@
         <img src="images/icons/ubuntu-trash.svg" alt="Empty Trash"
           style="width: 72px; height: 72px; opacity: 0.75; margin-bottom: 16px;">
         <h3 style="font-size: 16px; font-weight: 700; color: inherit; margin-bottom: 6px;">Trash is Empty</h3>
-        <p style="font-size: 13px; color: #888888; max-width: 320px;">Deleted files and obsolete items are securely emptied from the repository.</p>
+        <p style="font-size: 13px; color: #888888; max-width: 320px;">Deleted files and obsolete items are securely
+          emptied from the repository.</p>
       </div>
     </section>
 
     <!-- 10. MINESWEEPER (GNOME MINES) WINDOW -->
-    <section id="window-mines" class="xp-window" style="width: 380px; min-height: 480px; display: none;" aria-label="Minesweeper Game Window">
+    <section id="window-mines" class="xp-window" style="width: 380px; min-height: 480px; display: none;"
+      aria-label="Minesweeper Game Window">
       <header class="xp-titlebar">
         <div class="xp-titlebar-title">
           <img class="xp-titlebar-icon" src="images/icons/ubuntu-mines.svg" alt="" aria-hidden="true">
           <span>Mines - GNOME Games</span>
         </div>
         <div class="xp-titlebar-controls">
-          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize" aria-label="Minimize Window">−</button>
-          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize" aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
           <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
         </div>
       </header>
@@ -748,21 +899,510 @@
       </div>
     </section>
 
+    <!-- 12. 2048 PUZZLE GAME WINDOW -->
+    <section id="window-2048" class="xp-window" style="width: 440px; min-height: 520px; display: none;"
+      aria-label="2048 Game Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-2048.svg" alt="" aria-hidden="true">
+          <span>2048 - Sliding Tile Puzzle</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 16px;">
+        <div class="g2048-container">
+
+          <!-- Header with Scores -->
+          <div class="g2048-header">
+            <div class="g2048-title-group">
+              <h2>2048</h2>
+              <p class="g2048-subtitle">Join the tiles to get <strong>2048!</strong></p>
+            </div>
+            <div class="g2048-scores-row">
+              <div class="g2048-score-box">
+                <span class="g2048-score-label">Score</span>
+                <span id="g2048-score" class="g2048-score-val">0</span>
+              </div>
+              <div class="g2048-score-box">
+                <span class="g2048-score-label">Best</span>
+                <span id="g2048-best" class="g2048-score-val">0</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Toolbar: New Game & Undo -->
+          <div class="g2048-toolbar">
+            <button id="g2048-new-btn" class="g2048-btn g2048-btn-primary" type="button">🔄 New Game</button>
+            <button id="g2048-undo-btn" class="g2048-btn" type="button" disabled>↩️ Undo</button>
+          </div>
+
+          <!-- 4x4 Board Frame -->
+          <div class="g2048-board-frame">
+            <div id="g2048-board" class="g2048-board"></div>
+
+            <!-- Overlay for Win / Game Over -->
+            <div id="g2048-overlay" class="g2048-overlay">
+              <h3 id="g2048-overlay-title">Game Over!</h3>
+              <p id="g2048-overlay-msg">No more moves available.</p>
+              <div class="g2048-overlay-actions">
+                <button id="g2048-keep-going-btn" class="g2048-btn" type="button" style="display:none;">Keep
+                  Going</button>
+                <button id="g2048-overlay-restart" class="g2048-btn g2048-btn-primary" type="button">Try Again</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- On-Screen D-Pad for Touch / Quick Navigation -->
+          <div class="g2048-dpad" aria-label="On-screen Directional Controls">
+            <button id="g2048-dpad-up" class="g2048-dpad-btn g2048-dpad-up" type="button"
+              aria-label="Move Up">▲</button>
+            <button id="g2048-dpad-left" class="g2048-dpad-btn g2048-dpad-left" type="button"
+              aria-label="Move Left">◀</button>
+            <button id="g2048-dpad-down" class="g2048-dpad-btn g2048-dpad-down" type="button"
+              aria-label="Move Down">▼</button>
+            <button id="g2048-dpad-right" class="g2048-dpad-btn g2048-dpad-right" type="button"
+              aria-label="Move Right">▶</button>
+          </div>
+
+          <p class="g2048-instructions">Use <strong>Arrow keys</strong>, <strong>Swipe</strong>, or
+            <strong>D-Pad</strong> to slide tiles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. SNAKE GAME WINDOW -->
+    <section id="window-snake" class="xp-window" style="width: 440px; min-height: 560px; display: none;"
+      aria-label="Snake Game Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-snake.svg" alt="" aria-hidden="true">
+          <span>Snake - Arcade Classic</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 16px;">
+        <div class="arc-container snake-container">
+          <div class="arc-header">
+            <div class="arc-title">
+              <h2>Snake</h2>
+              <p class="arc-subtitle">Eat apples, grow longer, don't crash.</p>
+            </div>
+            <div class="arc-scores">
+              <div class="arc-score-box">
+                <span class="arc-score-label">Score</span>
+                <span id="snake-score" class="arc-score-val">0</span>
+              </div>
+              <div class="arc-score-box">
+                <span class="arc-score-label">Best</span>
+                <span id="snake-best" class="arc-score-val">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arc-toolbar">
+            <button id="snake-new-btn" class="arc-btn arc-btn-primary" type="button">🔄 New Game</button>
+            <button id="snake-pause-btn" class="arc-btn" type="button">⏸ Pause</button>
+          </div>
+
+          <div id="snake-board-frame" class="arc-frame">
+            <canvas id="snake-canvas" class="arc-canvas" width="400" height="400"
+              aria-label="Snake game board"></canvas>
+            <div id="snake-overlay" class="arc-overlay">
+              <h3 id="snake-overlay-title">Snake</h3>
+              <p id="snake-overlay-msg">Eat the apples, avoid the walls and your tail.</p>
+              <button id="snake-overlay-btn" class="arc-btn arc-btn-primary" type="button">Start Game</button>
+            </div>
+          </div>
+
+          <div class="arc-dpad" aria-label="On-screen Directional Controls">
+            <button id="snake-dpad-up" class="arc-dpad-btn arc-dpad-up" type="button" aria-label="Up">▲</button>
+            <button id="snake-dpad-left" class="arc-dpad-btn arc-dpad-left" type="button" aria-label="Left">◀</button>
+            <button id="snake-dpad-down" class="arc-dpad-btn arc-dpad-down" type="button" aria-label="Down">▼</button>
+            <button id="snake-dpad-right" class="arc-dpad-btn arc-dpad-right" type="button"
+              aria-label="Right">▶</button>
+          </div>
+
+          <p class="arc-instructions"><strong>Arrow keys</strong> / <strong>WASD</strong>, <strong>Swipe</strong>, or
+            <strong>D-Pad</strong> to steer. <strong>Space</strong> pauses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. TIC-TAC-TOE GAME WINDOW -->
+    <section id="window-tictactoe" class="xp-window" style="width: 400px; min-height: 540px; display: none;"
+      aria-label="Tic-Tac-Toe Game Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-tictactoe.svg" alt="" aria-hidden="true">
+          <span>Tic-Tac-Toe - vs Computer</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 16px;">
+        <div class="arc-container ttt-container">
+          <div class="arc-header">
+            <div class="arc-title">
+              <h2>Tic-Tac-Toe</h2>
+              <p class="arc-subtitle">Three in a row beats the bot.</p>
+            </div>
+          </div>
+
+          <div class="arc-scores" style="width: 100%; justify-content: space-between;">
+            <div class="arc-score-box" style="flex: 1;">
+              <span class="arc-score-label">Wins</span>
+              <span id="ttt-wins" class="arc-score-val">0</span>
+            </div>
+            <div class="arc-score-box" style="flex: 1;">
+              <span class="arc-score-label">Draws</span>
+              <span id="ttt-draws" class="arc-score-val">0</span>
+            </div>
+            <div class="arc-score-box" style="flex: 1;">
+              <span class="arc-score-label">Losses</span>
+              <span id="ttt-losses" class="arc-score-val">0</span>
+            </div>
+          </div>
+
+          <div class="arc-toolbar">
+            <select id="ttt-difficulty" class="arc-select" aria-label="Select Difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard" selected>Hard (Unbeatable)</option>
+            </select>
+            <button id="ttt-new-btn" class="arc-btn arc-btn-primary" type="button">🔄 New Round</button>
+          </div>
+
+          <p id="ttt-status" class="arc-status">Your turn — you are <strong>X</strong></p>
+
+          <div class="arc-frame">
+            <div id="ttt-board" class="ttt-board" role="grid" aria-label="Tic-Tac-Toe board"></div>
+          </div>
+
+          <button id="ttt-reset-btn" class="arc-btn" type="button">Reset Scoreboard</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. MEMORY MATCH GAME WINDOW -->
+    <section id="window-memory" class="xp-window" style="width: 440px; min-height: 560px; display: none;"
+      aria-label="Memory Match Game Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-memory.svg" alt="" aria-hidden="true">
+          <span>Memory Match - Find the Pairs</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 16px;">
+        <div class="arc-container memory-container">
+          <div class="arc-header">
+            <div class="arc-title">
+              <h2>Memory</h2>
+              <p class="arc-subtitle">Match all 8 pairs in as few moves as you can.</p>
+            </div>
+          </div>
+
+          <div class="arc-scores" style="width: 100%; justify-content: space-between;">
+            <div class="arc-score-box" style="flex: 1;">
+              <span class="arc-score-label">Moves</span>
+              <span id="memory-moves" class="arc-score-val">0</span>
+            </div>
+            <div class="arc-score-box" style="flex: 1;">
+              <span class="arc-score-label">Time</span>
+              <span id="memory-time" class="arc-score-val">0:00</span>
+            </div>
+            <div class="arc-score-box" style="flex: 1;">
+              <span class="arc-score-label">Best</span>
+              <span id="memory-best" class="arc-score-val">—</span>
+            </div>
+          </div>
+
+          <div class="arc-toolbar" style="justify-content: center;">
+            <button id="memory-new-btn" class="arc-btn arc-btn-primary" type="button">🔀 Shuffle &amp; Restart</button>
+          </div>
+
+          <div class="arc-frame">
+            <div id="memory-board" class="memory-board" aria-label="Memory cards"></div>
+            <div id="memory-overlay" class="arc-overlay">
+              <h3 id="memory-overlay-title">All Pairs Found!</h3>
+              <p id="memory-overlay-msg"></p>
+              <button id="memory-overlay-btn" class="arc-btn arc-btn-primary" type="button">Play Again</button>
+            </div>
+          </div>
+
+          <p class="arc-instructions"><strong>Click</strong> or <strong>tap</strong> two cards to flip them.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. FLAPPY PENGUIN GAME WINDOW -->
+    <section id="window-flappy" class="xp-window" style="width: 400px; min-height: 640px; display: none;"
+      aria-label="Flappy Penguin Game Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-flappy.svg" alt="" aria-hidden="true">
+          <span>Flappy Penguin</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 16px;">
+        <div class="arc-container flappy-container">
+          <div class="arc-header">
+            <div class="arc-title">
+              <h2>Flappy</h2>
+              <p class="arc-subtitle">Fly Tux through the pipes.</p>
+            </div>
+            <div class="arc-scores">
+              <div class="arc-score-box">
+                <span class="arc-score-label">Score</span>
+                <span id="flappy-score" class="arc-score-val">0</span>
+              </div>
+              <div class="arc-score-box">
+                <span class="arc-score-label">Best</span>
+                <span id="flappy-best" class="arc-score-val">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="flappy-stage" class="flappy-stage">
+            <canvas id="flappy-canvas" class="arc-canvas" width="320" height="480"
+              aria-label="Flappy Penguin game area"></canvas>
+            <div id="flappy-overlay" class="arc-overlay" style="pointer-events: none; background: rgba(15, 23, 42, 0.55);">
+              <h3 id="flappy-overlay-title">Flappy Penguin</h3>
+              <p id="flappy-overlay-msg">Tap, click, or press Space to flap.</p>
+              <span id="flappy-overlay-hint" class="arc-overlay-hint"></span>
+            </div>
+          </div>
+
+          <p class="arc-instructions"><strong>Space</strong> / <strong>Click</strong> / <strong>Tap</strong> to flap.
+            <strong>P</strong> pauses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17. HEARTS CARD GAME WINDOW -->
+    <section id="window-hearts" class="xp-window" style="width: 640px; min-height: 620px; display: none;"
+      aria-label="Hearts Card Game Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-hearts.svg" alt="" aria-hidden="true">
+          <span>Hearts - Card Game</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 16px;">
+        <div class="arc-container hearts-container">
+          <div class="arc-header">
+            <div class="arc-title">
+              <h2>Hearts</h2>
+              <p class="arc-subtitle">Avoid hearts and the Q♠. First to 100 ends it — lowest wins.</p>
+            </div>
+          </div>
+
+          <div class="arc-toolbar">
+            <button id="hearts-new-btn" class="arc-btn" type="button">🔄 New Game</button>
+            <button id="hearts-pass-btn" class="arc-btn arc-btn-primary" type="button" disabled>Pass 0/3</button>
+          </div>
+
+          <p id="hearts-status" class="arc-status"></p>
+
+          <div class="hearts-table">
+            <div id="hearts-seat-2" class="hearts-seat hearts-seat-north">
+              <span class="hearts-seat-name">North</span>
+              <span class="hearts-seat-meta">13 cards · 0 pts</span>
+            </div>
+            <div id="hearts-seat-1" class="hearts-seat hearts-seat-west">
+              <span class="hearts-seat-name">West</span>
+              <span class="hearts-seat-meta">13 cards · 0 pts</span>
+            </div>
+            <div class="hearts-trick" aria-label="Current trick">
+              <div class="hearts-trick-slot" data-seat="2"></div>
+              <div class="hearts-trick-slot" data-seat="1"></div>
+              <div class="hearts-trick-slot" data-seat="3"></div>
+              <div class="hearts-trick-slot" data-seat="0"></div>
+            </div>
+            <div id="hearts-seat-3" class="hearts-seat hearts-seat-east">
+              <span class="hearts-seat-name">East</span>
+              <span class="hearts-seat-meta">13 cards · 0 pts</span>
+            </div>
+            <div id="hearts-overlay" class="arc-overlay">
+              <h3 id="hearts-overlay-title">Hand Complete</h3>
+              <p id="hearts-overlay-msg"></p>
+              <button id="hearts-overlay-btn" class="arc-btn arc-btn-primary" type="button">Next Hand</button>
+            </div>
+          </div>
+
+          <div id="hearts-hand" class="hearts-hand" aria-label="Your hand"></div>
+
+          <table class="hearts-scoreboard" aria-label="Scoreboard">
+            <thead>
+              <tr>
+                <th></th>
+                <th>You</th>
+                <th>West</th>
+                <th>North</th>
+                <th>East</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th>This hand</th>
+                <td id="hearts-hand-pts-0">0</td>
+                <td id="hearts-hand-pts-1">0</td>
+                <td id="hearts-hand-pts-2">0</td>
+                <td id="hearts-hand-pts-3">0</td>
+              </tr>
+              <tr>
+                <th>Total</th>
+                <td id="hearts-total-0" class="hearts-total">0</td>
+                <td id="hearts-total-1" class="hearts-total">0</td>
+                <td id="hearts-total-2" class="hearts-total">0</td>
+                <td id="hearts-total-3" class="hearts-total">0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 18. MANCALA GAME WINDOW -->
+    <section id="window-mancala" class="xp-window" style="width: 660px; min-height: 460px; display: none;"
+      aria-label="Mancala Game Window">
+      <header class="xp-titlebar">
+        <div class="xp-titlebar-title">
+          <img class="xp-titlebar-icon" src="images/icons/ubuntu-mancala.svg" alt="" aria-hidden="true">
+          <span>Mancala - Kalah</span>
+        </div>
+        <div class="xp-titlebar-controls">
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
+        </div>
+      </header>
+      <div class="xp-window-body" style="padding: 16px;">
+        <div class="arc-container mancala-container">
+          <div class="arc-header">
+            <div class="arc-title">
+              <h2>Mancala</h2>
+              <p class="arc-subtitle">Sow seeds counter-clockwise. Most seeds in your store wins.</p>
+            </div>
+            <div class="arc-scores">
+              <div class="arc-score-box">
+                <span class="arc-score-label">Wins</span>
+                <span id="mancala-wins" class="arc-score-val">0</span>
+              </div>
+              <div class="arc-score-box">
+                <span class="arc-score-label">Losses</span>
+                <span id="mancala-losses" class="arc-score-val">0</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arc-toolbar">
+            <select id="mancala-difficulty" class="arc-select" aria-label="Select Difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+            <button id="mancala-new-btn" class="arc-btn arc-btn-primary" type="button">🔄 New Game</button>
+          </div>
+
+          <p id="mancala-status" class="arc-status"></p>
+
+          <div style="position: relative; width: 100%;">
+            <div id="mancala-board" class="mancala-board" aria-label="Mancala board">
+              <span class="mancala-label mancala-label-top">Computer</span>
+              <div id="mancala-store-ai" class="mancala-store mancala-store-ai">
+                <span class="mancala-store-count">0</span>
+                <span class="mancala-store-name">CPU</span>
+              </div>
+              <button class="mancala-pit" data-pit="12" type="button" style="grid-row: 2; grid-column: 2;"></button>
+              <button class="mancala-pit" data-pit="11" type="button" style="grid-row: 2; grid-column: 3;"></button>
+              <button class="mancala-pit" data-pit="10" type="button" style="grid-row: 2; grid-column: 4;"></button>
+              <button class="mancala-pit" data-pit="9" type="button" style="grid-row: 2; grid-column: 5;"></button>
+              <button class="mancala-pit" data-pit="8" type="button" style="grid-row: 2; grid-column: 6;"></button>
+              <button class="mancala-pit" data-pit="7" type="button" style="grid-row: 2; grid-column: 7;"></button>
+              <button class="mancala-pit" data-pit="0" type="button" style="grid-row: 3; grid-column: 2;"></button>
+              <button class="mancala-pit" data-pit="1" type="button" style="grid-row: 3; grid-column: 3;"></button>
+              <button class="mancala-pit" data-pit="2" type="button" style="grid-row: 3; grid-column: 4;"></button>
+              <button class="mancala-pit" data-pit="3" type="button" style="grid-row: 3; grid-column: 5;"></button>
+              <button class="mancala-pit" data-pit="4" type="button" style="grid-row: 3; grid-column: 6;"></button>
+              <button class="mancala-pit" data-pit="5" type="button" style="grid-row: 3; grid-column: 7;"></button>
+              <div id="mancala-store-player" class="mancala-store mancala-store-player">
+                <span class="mancala-store-count">0</span>
+                <span class="mancala-store-name">You</span>
+              </div>
+              <span class="mancala-label mancala-label-bottom">You</span>
+            </div>
+            <div id="mancala-overlay" class="arc-overlay">
+              <h3 id="mancala-overlay-title">Game Over</h3>
+              <p id="mancala-overlay-msg"></p>
+              <button id="mancala-overlay-btn" class="arc-btn arc-btn-primary" type="button">Play Again</button>
+            </div>
+          </div>
+
+          <p class="arc-instructions">Last seed in your store = <strong>extra turn</strong>. Last seed in an empty pit
+            on your side <strong>captures</strong> the seeds opposite.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- 11. TETRIS BATTLE (1v1 vs AI) WINDOW -->
-    <section id="window-tetris" class="xp-window" style="width: 880px; min-height: 620px; display: none;" aria-label="Tetris Battle Window">
+    <section id="window-tetris" class="xp-window" style="width: 880px; min-height: 620px; display: none;"
+      aria-label="Tetris Battle Window">
       <header class="xp-titlebar">
         <div class="xp-titlebar-title">
           <img class="xp-titlebar-icon" src="images/icons/ubuntu-tetris.svg" alt="" aria-hidden="true">
           <span>Tetris Battle - Janrick vs Tux AI</span>
         </div>
         <div class="xp-titlebar-controls">
-          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize" aria-label="Minimize Window">−</button>
-          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize" aria-label="Maximize Window">□</button>
+          <button class="xp-btn-control xp-btn-min" type="button" title="Minimize"
+            aria-label="Minimize Window">−</button>
+          <button class="xp-btn-control xp-btn-max" type="button" title="Maximize"
+            aria-label="Maximize Window">□</button>
           <button class="xp-btn-control xp-btn-close" type="button" title="Close" aria-label="Close Window">✕</button>
         </div>
       </header>
       <div class="xp-window-body" style="padding: 12px; background: #14161d;">
-        
+
         <!-- Top Battle HUD Bar (Matching Screenshot) -->
         <div class="t-battle-top-bar">
           <!-- Left: Player 1 (Janrick Alo) -->
@@ -812,7 +1452,7 @@
 
         <!-- Main 1v1 Battle Arena -->
         <div class="t-battle-arena">
-          
+
           <!-- LEFT SIDE: PLAYER 1 BOARD -->
           <div class="t-player-zone">
             <!-- P1 Hold -->
@@ -829,11 +1469,13 @@
               <div id="tetris-p1-garbage-bar" class="t-garbage-bar" title="Incoming Garbage"></div>
               <!-- Combo Multiplier Popup -->
               <div id="tetris-p1-combo" class="t-combo-popup" aria-hidden="true"></div>
-              
+
               <!-- Start / Pause / Victory Overlay -->
               <div id="tetris-overlay" class="tetris-overlay">
                 <h3 id="tetris-overlay-title">TETRIS BATTLE</h3>
-                <p id="tetris-overlay-msg">1v1 Real-Time Battle vs Tux AI<br><span style="font-size: 11px; opacity: 0.85;">Clear lines & build Combos to send massive garbage attacks!</span></p>
+                <p id="tetris-overlay-msg">1v1 Real-Time Battle vs Tux AI<br><span
+                    style="font-size: 11px; opacity: 0.85;">Clear lines & build Combos to send massive garbage
+                    attacks!</span></p>
                 <button id="tetris-overlay-start-btn" class="tetris-overlay-btn" type="button">⚔️ START BATTLE</button>
               </div>
             </div>
@@ -951,13 +1593,16 @@
               <span>📍 Talisay City, Negros Occidental, Philippines</span>
             </div>
             <div class="messenger-detail-line">
-              <span>📱 <a href="https://wa.me/639928685257" target="_blank" rel="noopener noreferrer">+63 992 868 5257</a></span>
+              <span>📱 <a href="https://wa.me/639928685257" target="_blank" rel="noopener noreferrer">+63 992 868
+                  5257</a></span>
             </div>
             <div class="messenger-links-row">
-              <a class="messenger-link-simple" href="https://github.com/Kanexzz" target="_blank" rel="noopener noreferrer">
+              <a class="messenger-link-simple" href="https://github.com/Kanexzz" target="_blank"
+                rel="noopener noreferrer">
                 <span>💽</span> GitHub
               </a>
-              <a class="messenger-link-simple" href="https://www.linkedin.com/in/janrick-alo-3794bb356/" target="_blank" rel="noopener noreferrer">
+              <a class="messenger-link-simple" href="https://www.linkedin.com/in/janrick-alo-3794bb356/" target="_blank"
+                rel="noopener noreferrer">
                 <span>🌐</span> LinkedIn
               </a>
             </div>
@@ -1185,6 +1830,48 @@
         <span class="app-grid-label">Tetris</span>
       </button>
 
+      <!-- 11. 2048 (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="2048" type="button" aria-label="2048">
+        <img class="app-grid-icon" src="images/icons/ubuntu-2048.svg" alt="">
+        <span class="app-grid-label">2048</span>
+      </button>
+
+      <!-- 12. Snake (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="snake" type="button" aria-label="Snake">
+        <img class="app-grid-icon" src="images/icons/ubuntu-snake.svg" alt="">
+        <span class="app-grid-label">Snake</span>
+      </button>
+
+      <!-- 13. Tic-Tac-Toe (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="tictactoe" type="button" aria-label="Tic-Tac-Toe">
+        <img class="app-grid-icon" src="images/icons/ubuntu-tictactoe.svg" alt="">
+        <span class="app-grid-label">Tic-Tac-Toe</span>
+      </button>
+
+      <!-- 14. Memory Match (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="memory" type="button" aria-label="Memory Match">
+        <img class="app-grid-icon" src="images/icons/ubuntu-memory.svg" alt="">
+        <span class="app-grid-label">Memory</span>
+      </button>
+
+      <!-- 15. Flappy Penguin (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="flappy" type="button" aria-label="Flappy Penguin">
+        <img class="app-grid-icon" src="images/icons/ubuntu-flappy.svg" alt="">
+        <span class="app-grid-label">Flappy</span>
+      </button>
+
+      <!-- 16. Hearts (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="hearts" type="button" aria-label="Hearts">
+        <img class="app-grid-icon" src="images/icons/ubuntu-hearts.svg" alt="">
+        <span class="app-grid-label">Hearts</span>
+      </button>
+
+      <!-- 17. Mancala (Appears in All & Search) -->
+      <button class="app-grid-item" data-window="mancala" type="button" aria-label="Mancala">
+        <img class="app-grid-icon" src="images/icons/ubuntu-mancala.svg" alt="">
+        <span class="app-grid-label">Mancala</span>
+      </button>
+
     </div>
 
     <!-- Bottom View Switcher (Frequent / All) matching 2nd image -->
@@ -1205,6 +1892,13 @@
   <script src="js/taskbar.js"></script>
   <script src="js/minesweeper.js"></script>
   <script src="js/tetris.js"></script>
+  <script src="js/game2048.js"></script>
+  <script src="js/snake.js"></script>
+  <script src="js/tictactoe.js"></script>
+  <script src="js/memory.js"></script>
+  <script src="js/flappy.js"></script>
+  <script src="js/hearts.js"></script>
+  <script src="js/mancala.js"></script>
   <script src="js/mobile.js"></script>
 </body>
 
